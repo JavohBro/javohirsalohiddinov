@@ -8,12 +8,12 @@ gsap.to(".a", {
     pin: true,
     markers: false
   },
-  x: 525,
-  y: 200,
+  x: "70vh",
+  y: "195vh",
   ease: "none",
-  width: 550,
-  height: 325,
-  backgroundColor: '737373'
+  width: "80vh",
+  height: "45vh",
+  backgroundColor: '#737373'
 });
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, DrawSVGPlugin, ScrollSmoother);
