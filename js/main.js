@@ -16,6 +16,18 @@ gsap.to(".a", {
   backgroundColor: '#737373'
 });
 
+gsap.to(".b", {
+  scrollTrigger: {
+    trigger: ".b",
+    start: "center 50%",
+    end: "449vh top",
+    scrub: true,
+    pin: true,
+    markers: false
+  },
+  ease: "none",
+});
+
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, DrawSVGPlugin, ScrollSmoother);
 
 let smoother = ScrollSmoother.create({
@@ -59,7 +71,7 @@ const tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".sign",
     start: "500 center",
-    end: () => "+=" + Math.max(390, Math.round(totalLength * 0.6)),
+    end: () => "+=" + Math.max(395, Math.round(totalLength * 0.6)),
     scrub: true,
     pin: true,
     markers: false
@@ -75,4 +87,30 @@ paths.forEach(segment => {
     ease: "power2.Out",
     duration: segDur
   });
+});
+
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(".text-loop-right", {
+  scrollTrigger: {
+    trigger: ".text-loop-right",
+    toggleActions: "restart none none none",
+  },
+  x: "93.5%",
+  ease: "none",
+  duration: 500,
+  repeat: -1,
+});
+
+gsap.to(".text-loop-left", {
+  scrollTrigger: {
+    trigger: ".text-loop-left",
+    toggleActions: "restart none none none",
+  },
+  x: "-1600%",
+  ease: "none",
+  duration: 500,
+  repeat: -1,
 });

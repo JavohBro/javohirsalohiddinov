@@ -2,6 +2,14 @@
     margin: 0%;
     padding: 0%;
 }
+body{
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    /* width: 1vh; */
+    display: none;
+}
+
 .a {
     width: 100%;
     height: 100vh;
@@ -9,22 +17,53 @@
     /* margin-left: 15vh;
     margin-top: 25vh; */
 }
-.b {
+/* .b {
     width: 20vh;
     height: 20vh;
     background-color: rgb(43, 226, 70);
     margin-left: 15vh;
     margin-top: 25vh;
+} */
+.b {
+    width: 100%;
+    height: 25vh;
+    background-color: rgb(226, 131, 43);
+    margin-top: -160vh;
+    position: relative;
+    z-index: -1;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.text-loop-right {
+    flex-direction: row;
+    margin-top: -1vh;
+    margin-left: -1600%;
+    font-family: "Noto Serif Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: 11vh;
 }
 .c {
-    width: 20vh;
+    width: 100%;
     height: 20vh;
     background-color: rgb(226, 131, 43);
-    margin-left: 15vh;
-    margin-top: 100vh;
+    /* margin-left: 15vh; */
+    margin-top: 100vh;  
+    overflow: hidden;
+    white-space: nowrap;
 }
-
-
+.text-loop-left {
+    flex-direction: row;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 11vh;
+    margin-top: -4vh;
+    color: white;
+}
 svg{
     /* border: 2px solid black; */
     overflow: visible;
