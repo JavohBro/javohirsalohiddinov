@@ -115,14 +115,112 @@ gsap.to(".text-loop-left", {
   repeat: -1,
 });
 
-gsap.to(".navlink", {
+gsap.to(".navj", {
   scrollTrigger: {
-    trigger: ".c",
+    trigger: ".nav",
     start: "top 2%",
     scrub: true,
-    markers: true
+    markers: false,
   },
+  color: "#ddddddff",
   ease: "none",
+  fontSize: "5vh",
+});
+
+gsap.to(".navs", {
+  scrollTrigger: {
+    trigger: ".nav",
+    start: "top 2%",
+    scrub: true,
+    markers: false,
+  },
+  color: "#ffffffee",
+  ease: "none",
+  fontSize: "4.5vh",
+});
+
+gsap.to(".buttons", {
+  scrollTrigger: {
+    trigger: ".nav",
+    start: "top 2%",
+    scrub: true,
+    markers: false,
+  },
+  width: "13%",
+  ease: "none",
+});
+
+gsap.to(".navbutton", {
+  scrollTrigger: {
+    trigger: ".nav",
+    start: "top 2%",
+    scrub: true,
+    markers: false,
+  },
   fontSize: "2.5vh",
-  // color: "rgb(255, 255, 255)",~
+  ease: "none",
+});
+
+gsap.to(".navmenu", {
+  scrollTrigger: {
+    trigger: ".nav",
+    start: "top 2%",
+    scrub: true,
+    markers: false,
+  },
+  height: "8.6vh",
+  borderColor: "#ffffffff",
+  ease: "none",
+});
+
+
+gsap.registerPlugin(SplitText);
+
+const splittop = new SplitText(".hoverTextTop", {
+  type: "chars"
+});
+
+const splitbottom = new SplitText(".hoverTextBottom", {
+  type: "chars"
+});
+
+gsap.set(splittop.chars, { display: "inline-block" });
+gsap.set(splitbottom.chars, { display: "inline-block" });
+
+// Hover in
+document.querySelector(".navbutton").addEventListener("mouseenter", () => {
+  gsap.to(splittop.chars, {
+    y: "-85%",
+    duration: 0.3,
+    ease: "power2.out",
+    stagger: 0.03,
+  });
+});
+
+document.querySelector(".navbutton").addEventListener("mouseenter", () => {
+  gsap.to(splitbottom.chars, {
+    y: "-100%",
+    duration: 0.3,
+    ease: "power2.out",
+    stagger: 0.03,
+  });
+});
+
+// Hover out
+document.querySelector(".navbutton").addEventListener("mouseleave", () => {
+  gsap.to(splittop.chars, {
+    y: 0,
+    duration: 0.3,
+    ease: "power2.in",
+    stagger: 0.03,
+  });
+});
+
+document.querySelector(".navbutton").addEventListener("mouseleave", () => {
+  gsap.to(splitbottom.chars, {
+    y: 0,
+    duration: 0.3,
+    ease: "power2.in",
+    stagger: 0.03,
+  });
 });
