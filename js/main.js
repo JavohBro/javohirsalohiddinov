@@ -114,3 +114,15 @@ gsap.to(".text-loop-left", {
   duration: 500,
   repeat: -1,
 });
+
+gsap.to(".navlink", {
+  scrollTrigger: {
+    trigger: ".c",
+    start: "top 2%",
+    scrub: true,
+    markers: true
+  },
+  ease: "none",
+  fontSize: "2.5vh",
+  // color: "rgb(255, 255, 255)",~
+});
