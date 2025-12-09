@@ -23,13 +23,17 @@ body{
     height: 100vh;
     background-color: rgb(255, 255, 255);
 }
+.me{
+    height: 100%;
+    margin-left: 25%;
+}
 .sign{
     /* border: 2px solid black; */
     overflow: visible;
-    margin-top: -170vh;
+    margin-top: -60%;
     width: 74%;
     /* height: 80vh; */
-    margin-left: 12%;
+    margin-left: 14%;
     position: absolute;
 }
 
@@ -77,7 +81,7 @@ body{
 }
 .navj{
     font-family: 'Brier-Regular', serif;
-    color: rgb(0, 0, 0);
+    color: #2D3025;
     font-size: 6vh;
 }
 .navs{
@@ -86,7 +90,7 @@ body{
     font-weight: 700;
     font-style: normal;
     font-variation-settings: "wdth" 93;
-    color: rgb(0, 0, 0);
+    color: #2D3025;
     margin-top: -2vh;
     font-size: 5.5vh;
 }
@@ -103,8 +107,9 @@ body{
     font-optical-sizing: auto;
     font-weight: 800;
     font-style: normal;
-    font-variation-settings: "wdth" 95;
+    font-variation-settings: "wdth" 90;
     font-size: 3vh;
+    color: #1b1b1b;
     line-height: 110%;
     padding-left: 1.5vh;
     background-color: #D1FE07;

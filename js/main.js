@@ -9,20 +9,28 @@ gsap.to(".a", {
     markers: false
   },
   x: "70vh",
-  y: "195vh",
+  y: "220vh",
   ease: "none",
-  width: "80vh",
+  // width: "80vh",
+  width: "38%",
   height: "45vh",
   backgroundColor: '#737373'
 });
 
 gsap.to(".b", {
+  // scrollTrigger: {
+  //   trigger: ".b",
+  //   start: "center 50%",
+  //   end: "449vh top",
+  //   scrub: true,
+  //   pin: true,
+  //   markers: true
+  // },
   scrollTrigger: {
-    trigger: ".b",
-    start: "center 50%",
-    end: "449vh top",
+    trigger: ".a",
+    start: "top top",
     scrub: true,
-    pin: true,
+    pin: ".b",
     markers: false
   },
   ease: "none",
@@ -70,8 +78,9 @@ const baseDuration = 20;
 const tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".sign",
-    start: "500 center",
-    end: () => "+=" + Math.max(395, Math.round(totalLength * 0.6)),
+    start: "center center",
+    endTrigger: ".a",
+    // end: () => "+=" + Math.max(395, Math.round(totalLength * 0.6)),
     scrub: true,
     pin: true,
     markers: false
@@ -122,7 +131,7 @@ gsap.to(".navj", {
     scrub: true,
     markers: false,
   },
-  color: "#ddddddff",
+  color: "#bcbcbcff",
   ease: "none",
   fontSize: "5vh",
 });
@@ -134,7 +143,7 @@ gsap.to(".navs", {
     scrub: true,
     markers: false,
   },
-  color: "#ffffffee",
+  color: "#e1e1deff",
   ease: "none",
   fontSize: "4.5vh",
 });
