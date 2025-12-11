@@ -236,11 +236,54 @@ document.querySelector(".navbutton").addEventListener("mouseleave", () => {
 });
 
 
-// TweenLite.fromTo("#path", 1, {drawSVG: "0% 10%"}, {drawSVG: "0% 10%"}); // NONE
-// TweenLite.fromTo("#path", 1, {drawSVG: "0% 10%"}, {drawSVG: "10% 20%", delay: 0.4, ease: "power1.inOut"}); // HOVER
-// TweenLite.fromTo("#path", 1, {drawSVG: "10% 20%"}, {drawSVG: "55% 70%", delay: 0.4, ease: "power1.inOut"}); // ON-CLICK
-// TweenLite.fromTo("#pathTwo", 1, {drawSVG: "10% 20%"}, {drawSVG: "50% 64%", delay: 0.4, ease: "power1.inOut"}); // ON-CLICK TWO
-// TweenLite.fromTo("#path", 1, {drawSVG: "50% 67%"}, {drawSVG: "100% 110%", delay: 0.4, ease: "power1.inOut"}); // OFF-CLICK
-TweenLite.fromTo("#path", 1, {drawSVG: "0% 10%"}, {drawSVG: "100% 110%", delay: 0.4, ease: "power1.inOut"}); // FULL ANIMATION
+TweenLite.to("#path", 0, {drawSVG: "0% 12%"}); // NONE
+TweenLite.to("#pathTwo", 0, {drawSVG: "0% 12%"}); // NONE
 
-TweenLite.fromTo("#pathTwo", 1, {drawSVG: "0% 10%"}, {drawSVG: "100% 110%", delay: 0.4, ease: "power1.inOut"}); 
+let isMenu = false; // false = HOME, true = MENU
+let svgButton = document.querySelector(".navmenu");
+
+// SETUP EVENT LISTENERS ONCE
+svgButton.addEventListener("mouseenter", () => {
+  if (isMenu) {
+    // MENU hover
+    TweenLite.to("#path", 0.8, { drawSVG: "55% 70%", ease: "power1.inOut" });
+    TweenLite.to("#pathTwo", 0.8, { drawSVG: "48% 63%", ease: "power1.inOut" });
+    console.log("menu-hover");
+  } else {
+    // HOME hover
+    TweenLite.to("#path", 0.4, { drawSVG: "2% 15%", ease: "power1.inOut" });
+    TweenLite.to("#pathTwo", 0.4, { drawSVG: "2% 16%", ease: "power1.inOut" });
+    console.log("home-hover");
+  }
+});
+
+svgButton.addEventListener("mouseleave", () => {
+  if (isMenu) {
+    // MENU leave
+    TweenLite.fromTo("#path", 0.8, {drawSVG: "53% 70%"}, {drawSVG: "0% 12%", ease: "power1.inOut"});
+    TweenLite.fromTo("#pathTwo", 0.8, {drawSVG: "48% 65%"}, {drawSVG: "0% 12%", ease: "power1.inOut"});
+    console.log("menu-leave");
+  } else {
+    // HOME leave
+    TweenLite.to("#path", 0.4, { drawSVG: "0% 12%", ease: "power1.inOut" });
+    TweenLite.to("#pathTwo", 0.4, { drawSVG: "0% 12%", ease: "power1.inOut" });
+    console.log("home-leave");
+  }
+});
+
+// CLICK TO TOGGLE STATE
+svgButton.addEventListener("click", () => {
+  if (isMenu) {
+    // MENU → HOME
+    TweenLite.to("#path", 1.5, { drawSVG: "2% 15%", ease: "power1.inOut" });
+    TweenLite.to("#pathTwo", 1.5, { drawSVG: "2% 16%", ease: "power1.inOut" });
+    console.log("menu → home");
+  } else {
+    // HOME → MENU
+    TweenLite.to("#path", 1.8, { drawSVG: "153% 170%", ease: "power1.inOut" });
+    TweenLite.to("#pathTwo", 1.8, { drawSVG: "148% 165%", ease: "power1.inOut" });
+    console.log("home → menu");
+  }
+
+  isMenu = !isMenu; // toggle
+});
