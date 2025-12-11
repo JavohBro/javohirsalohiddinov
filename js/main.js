@@ -178,7 +178,8 @@ gsap.to(".navmenu", {
     markers: false,
   },
   height: "8.6vh",
-  borderColor: "#ffffffff",
+  borderColor: "#D1FE07",
+  backgroundColor: "#F3F3EB",
   ease: "none",
 });
 
@@ -233,3 +234,13 @@ document.querySelector(".navbutton").addEventListener("mouseleave", () => {
     stagger: 0.03,
   });
 });
+
+
+// TweenLite.fromTo("#path", 1, {drawSVG: "0% 10%"}, {drawSVG: "0% 10%"}); // NONE
+// TweenLite.fromTo("#path", 1, {drawSVG: "0% 10%"}, {drawSVG: "10% 20%", delay: 0.4, ease: "power1.inOut"}); // HOVER
+// TweenLite.fromTo("#path", 1, {drawSVG: "10% 20%"}, {drawSVG: "55% 70%", delay: 0.4, ease: "power1.inOut"}); // ON-CLICK
+// TweenLite.fromTo("#pathTwo", 1, {drawSVG: "10% 20%"}, {drawSVG: "50% 64%", delay: 0.4, ease: "power1.inOut"}); // ON-CLICK TWO
+// TweenLite.fromTo("#path", 1, {drawSVG: "50% 67%"}, {drawSVG: "100% 110%", delay: 0.4, ease: "power1.inOut"}); // OFF-CLICK
+TweenLite.fromTo("#path", 1, {drawSVG: "0% 10%"}, {drawSVG: "100% 110%", delay: 0.4, ease: "power1.inOut"}); // FULL ANIMATION
+
+TweenLite.fromTo("#pathTwo", 1, {drawSVG: "0% 10%"}, {drawSVG: "100% 110%", delay: 0.4, ease: "power1.inOut"}); 
