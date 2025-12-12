@@ -1,0 +1,276 @@
+/* ===================================
+   CSS Reset & Base Styles
+   =================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: rgb(7, 43, 0);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* ===================================
+   Typography & Fonts
+   =================================== */
+
+@font-face {
+    font-family: 'Brier-Regular';
+    src: url('../fonts/Brier-Bold.otf') format('opentype'),
+         url('../fonts/Brier-Regular.otf') format('opentype');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+/* ===================================
+   Navigation Styles
+   =================================== */
+
+.nav {
+    position: fixed;
+    width: 98%;
+    height: 11.5vh;
+    top: 2%;
+    left: 1%;
+    z-index: 1;
+}
+
+.navlink {
+    text-decoration: none;
+    float: left;
+}
+
+.navj {
+    font-family: 'Brier-Regular', serif;
+    color: #2D3025;
+    font-size: 6vh;
+}
+
+.navs {
+    font-family: "Mona Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "wdth" 93;
+    color: #2D3025;
+    margin-top: -2vh;
+    font-size: 5.5vh;
+}
+
+/* ===================================
+   Navigation Buttons
+   =================================== */
+
+.buttons {
+    float: right;
+    width: 15%;
+}
+
+.navbutton {
+    float: left;
+    width: 60%;
+    margin-top: 1.4vh;
+    font-family: "Mona Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings: "wdth" 90;
+    font-size: 3vh;
+    color: #1b1b1b;
+    line-height: 110%;
+    padding-left: 1.5vh;
+    background-color: #D1FE07;
+    border: 0.2vh solid #D1FE07;
+    border-radius: 1.4vh;
+    cursor: pointer;
+}
+
+.store {
+    width: 22%;
+    float: left;
+    margin-top: 2.5vh;
+}
+
+.e {
+    float: left;
+    width: 60%;
+    height: 2.5vh;
+    background: #D1FE07;
+    margin-left: 10%;
+    position: relative;
+    z-index: 1;
+}
+
+.storeText {
+    float: left;
+    width: 60%;
+    margin-left: 10%;
+}
+
+.f {
+    float: left;
+    width: 60%;
+    height: 3.2vh;
+    background: #D1FE07;
+    margin-left: 32%;
+    margin-top: -20%;
+    position: relative;
+    z-index: 1;
+}
+
+.navmenu {
+    float: left;
+    width: 30%;
+    height: 9.6vh;
+    margin-left: 5%;
+    margin-top: 1.4vh;
+    border: 0.4vh solid rgb(36, 36, 36);
+    border-radius: 17%;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.menuPath {
+    width: 100%;
+    margin-top: 10%;
+    position: relative;
+    z-index: 2;
+}
+
+/* ===================================
+   Hero Section
+   =================================== */
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+}
+
+.sign {
+    overflow: visible;
+    margin-top: -60%;
+    width: 74%;
+    margin-left: 14%;
+    position: absolute;
+}
+
+/* ===================================
+   Scrolling Text Section
+   =================================== */
+
+.scrolling-text {
+    width: 100%;
+    height: 25vh;
+    margin-top: -160vh;
+    position: relative;
+    z-index: -1;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.text-loop-right {
+    flex-direction: row;
+    margin-top: -1vh;
+    margin-left: -1600%;
+    font-family: 'Brier-Regular', serif;
+    font-size: 13vh;
+    color: rgb(106, 159, 1);
+}
+
+.text-loop-left {
+    flex-direction: row;
+    font-family: "Mona Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 13vh;
+    margin-top: -5vh;
+    color: rgb(204, 204, 204);
+    font-variation-settings: "wdth" 95;
+}
+
+/* ===================================
+   Demo Section
+   =================================== */
+
+.demo {
+    width: 20%;
+    height: 20vh;
+    margin-left: 20vh;
+    margin-top: 100vh;
+    background-color: #ffaa00;
+    cursor: pointer;
+}
+
+/* ===================================
+   Media Queries - Responsive Design
+   =================================== */
+
+@media screen and (max-width: 1024px) {
+    .navj {
+        font-size: 5vh;
+    }
+    
+    .navs {
+        font-size: 4.5vh;
+    }
+    
+    .buttons {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav {
+        width: 96%;
+        left: 2%;
+    }
+    
+    .navj {
+        font-size: 4vh;
+    }
+    
+    .navs {
+        font-size: 3.5vh;
+    }
+    
+    .buttons {
+        width: 30%;
+    }
+    
+    .text-loop-right,
+    .text-loop-left {
+        font-size: 10vh;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navj {
+        font-size: 3vh;
+    }
+    
+    .navs {
+        font-size: 2.5vh;
+    }
+    
+    .buttons {
+        width: 40%;
+    }
+    
+    .navbutton {
+        font-size: 2vh;
+    }
+    
+    .text-loop-right,
+    .text-loop-left {
+        font-size: 8vh;
+    }
+}
