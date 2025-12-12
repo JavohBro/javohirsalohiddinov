@@ -1,106 +1,38 @@
-*{
-    margin: 0%;
-    padding: 0%;
+/* ===================================
+   CSS Reset & Base Styles
+   =================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
+
+body {
     overflow-x: hidden;
     background-color: rgb(7, 43, 0);
-}
-
-#loader {
-    position: fixed;
-    inset: 0;
-    background: #D1FE07;
-    color: white;
-    display: grid;
-    place-items: center;
-    z-index: 9999;
-}
-
-.loader-logo {
-    width: 20vh;
-    margin-top: 40vh;
-}
-.loader-text {
-    font-family: "Mona Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    font-variation-settings: "wdth" 90;
-    font-size: 2vh;
-    color: #1b1b1b;
-    margin-top: 30vh;
 }
 
 ::-webkit-scrollbar {
     display: none;
 }
 
+/* ===================================
+   Typography & Fonts
+   =================================== */
+
 @font-face {
     font-family: 'Brier-Regular';
-    src: url('fonts/Brier-Bold.otf') format('opentype'), url('fonts/Brier-Regular.otf') format('opentype');
+    src: url('../fonts/Brier-Bold.otf') format('opentype'),
+         url('../fonts/Brier-Regular.otf') format('opentype');
     font-weight: lighter;
     font-style: normal;
 }
 
-.a {
-    width: 100%;
-    height: 100vh;
-    background-color: rgb(255, 255, 255);
-}
+/* ===================================
+   Navigation Styles
+   =================================== */
 
-.layer {
-    position: fixed;
-    inset: 0;
-}
-
-.base {
-    background: url("media/mainMe/me.jpg") center/cover no-repeat;
-}
-
-.reveal {
-    background: url("media/mainMe/hamilton3.jpg") center/cover no-repeat;
-    mask-image: radial-gradient(circle 10vh at 0% 0%, black 80%, transparent 101%);
-    mask-repeat: no-repeat;
-    mask-size: 100% 100%;
-}
-
-.sign{
-    overflow: visible;
-    margin-top: -60%;
-    width: 74%;
-    margin-left: 14%;
-    position: absolute;
-}
-
-.b {
-    width: 100%;
-    height: 25vh;
-    margin-top: -160vh;
-    position: relative;
-    z-index: -1;
-    overflow: hidden;
-    white-space: nowrap;
-}
-.text-loop-right {
-    flex-direction: row;
-    margin-top: -1vh;
-    margin-left: -1600%;
-    font-family: 'Brier-Regular', serif;
-    font-size: 13vh;
-    color: rgb(106, 159, 1);
-}
-.text-loop-left {
-    flex-direction: row;
-    font-family: "Mona Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 13vh;
-    margin-top: -5vh;
-    color: rgb(204, 204, 204);
-    font-variation-settings: "wdth" 95;
-}
 .nav {
     position: fixed;
     width: 98%;
@@ -109,16 +41,19 @@ body{
     left: 1%;
     z-index: 1;
 }
-.navlink{
+
+.navlink {
     text-decoration: none;
     float: left;
 }
-.navj{
+
+.navj {
     font-family: 'Brier-Regular', serif;
     color: #2D3025;
     font-size: 6vh;
 }
-.navs{
+
+.navs {
     font-family: "Mona Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
@@ -128,11 +63,17 @@ body{
     margin-top: -2vh;
     font-size: 5.5vh;
 }
-.buttons{
+
+/* ===================================
+   Navigation Buttons
+   =================================== */
+
+.buttons {
     float: right;
     width: 15%;
 }
-.navbutton{
+
+.navbutton {
     float: left;
     width: 60%;
     margin-top: 1.4vh;
@@ -151,12 +92,13 @@ body{
     cursor: pointer;
 }
 
-.store{
+.store {
     width: 22%;
     float: left;
     margin-top: 2.5vh;
 }
-.e{
+
+.e {
     float: left;
     width: 60%;
     height: 2.5vh;
@@ -165,11 +107,13 @@ body{
     position: relative;
     z-index: 1;
 }
-.storeText{
+
+.storeText {
     float: left;
     width: 60%;
     margin-left: 10%;
 }
+
 .f {
     float: left;
     width: 60%;
@@ -180,7 +124,8 @@ body{
     position: relative;
     z-index: 1;
 }
-.navmenu{
+
+.navmenu {
     float: left;
     width: 30%;
     height: 9.6vh;
@@ -189,8 +134,9 @@ body{
     border: 0.4vh solid rgb(36, 36, 36);
     border-radius: 17%;
     cursor: pointer;
-    background-color: #9a9a9a00;
+    background-color: transparent;
 }
+
 .menuPath {
     width: 100%;
     margin-top: 10%;
@@ -198,16 +144,64 @@ body{
     z-index: 2;
 }
 
-.overlay{
-    top: 0;
-    height: 0%;
+/* ===================================
+   Hero Section
+   =================================== */
+
+.hero {
     width: 100%;
-    background-color: rgb(7, 43, 0);
-    border-bottom-left-radius: 200%;
-    border-bottom-right-radius: 200%;
-    position: fixed;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
 }
-.c{
+
+.sign {
+    overflow: visible;
+    margin-top: -60%;
+    width: 74%;
+    margin-left: 14%;
+    position: absolute;
+}
+
+/* ===================================
+   Scrolling Text Section
+   =================================== */
+
+.scrolling-text {
+    width: 100%;
+    height: 25vh;
+    margin-top: -160vh;
+    position: relative;
+    z-index: -1;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.text-loop-right {
+    flex-direction: row;
+    margin-top: -1vh;
+    margin-left: -1600%;
+    font-family: 'Brier-Regular', serif;
+    font-size: 13vh;
+    color: rgb(106, 159, 1);
+}
+
+.text-loop-left {
+    flex-direction: row;
+    font-family: "Mona Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 13vh;
+    margin-top: -5vh;
+    color: rgb(204, 204, 204);
+    font-variation-settings: "wdth" 95;
+}
+
+/* ===================================
+   Demo Section
+   =================================== */
+
+.demo {
     width: 20%;
     height: 30vh;
     margin-left: 40%;
@@ -304,8 +298,67 @@ body{
     cursor: pointer;
 }
 
-@media only screen and (max-width: 900px) {
-    *{
-        display: none;
+/* ===================================
+   Media Queries - Responsive Design
+   =================================== */
+
+@media screen and (max-width: 1024px) {
+    .navj {
+        font-size: 5vh;
+    }
+    
+    .navs {
+        font-size: 4.5vh;
+    }
+    
+    .buttons {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav {
+        width: 96%;
+        left: 2%;
+    }
+    
+    .navj {
+        font-size: 4vh;
+    }
+    
+    .navs {
+        font-size: 3.5vh;
+    }
+    
+    .buttons {
+        width: 30%;
+    }
+    
+    .text-loop-right,
+    .text-loop-left {
+        font-size: 10vh;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navj {
+        font-size: 3vh;
+    }
+    
+    .navs {
+        font-size: 2.5vh;
+    }
+    
+    .buttons {
+        width: 40%;
+    }
+    
+    .navbutton {
+        font-size: 2vh;
+    }
+    
+    .text-loop-right,
+    .text-loop-left {
+        font-size: 8vh;
     }
 }
