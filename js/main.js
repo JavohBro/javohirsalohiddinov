@@ -1,5 +1,20 @@
 gsap.registerPlugin(ScrollTrigger);
 
+document.body.style.overflow = "hidden";
+
+window.addEventListener("load", () => {
+  const tl = gsap.timeline({
+    onComplete() {
+      document.body.style.overflow = "";
+      document.querySelector("#loader").remove();
+    }
+  });
+
+  tl.to("#loader", { opacity: 0, duration: 0.6 })
+    .from(".hero", { y: 80, opacity: 0, duration: 0.8 }, "-=0.3");
+});
+
+
 gsap.to(".a", {
   scrollTrigger: {
     trigger: ".a",
@@ -18,14 +33,6 @@ gsap.to(".a", {
 });
 
 gsap.to(".b", {
-  // scrollTrigger: {
-  //   trigger: ".b",
-  //   start: "center 50%",
-  //   end: "449vh top",
-  //   scrub: true,
-  //   pin: true,
-  //   markers: true
-  // },
   scrollTrigger: {
     trigger: ".a",
     start: "top top",
@@ -194,8 +201,13 @@ const splitbottom = new SplitText(".hoverTextBottom", {
   type: "chars"
 });
 
+const jbtext = new SplitText(".jb-text", {
+  type: "chars"
+});
+
 gsap.set(splittop.chars, { display: "inline-block" });
 gsap.set(splitbottom.chars, { display: "inline-block" });
+gsap.set(jbtext.chars, { display: "inline-block" });
 
 // Hover in
 document.querySelector(".navbutton").addEventListener("mouseenter", () => {
@@ -235,6 +247,32 @@ document.querySelector(".navbutton").addEventListener("mouseleave", () => {
   });
 });
 
+gsap.to(jbtext.chars, {
+    scrollTrigger: {
+    trigger: ".c",
+    start: "top top",
+    endTrigger: ".a",
+    scrub: true,
+    pin: ".c",
+    markers: false
+  },
+  y: "-85%",
+  ease: "none",
+  stagger: 0.03,
+});
+
+gsap.to(".jb-logo", {
+    scrollTrigger: {
+    trigger: ".c",
+    start: "top top",
+    scrub: true,
+    markers: false
+  },
+  y: "-20%",
+  opacity: 0.9,
+  ease: "power1.in",
+});
+
 
 TweenLite.to("#path", 0, {drawSVG: "0% 12%"}); // NONE
 TweenLite.to("#pathTwo", 0, {drawSVG: "0% 12%"}); // NONE
@@ -246,8 +284,8 @@ let svgButton = document.querySelector(".navmenu");
 svgButton.addEventListener("mouseenter", () => {
   if (isMenu) {
     // MENU hover
-    TweenLite.to("#path", 0.8, { drawSVG: "55% 70%", ease: "power1.inOut" });
-    TweenLite.to("#pathTwo", 0.8, { drawSVG: "48% 63%", ease: "power1.inOut" });
+    TweenLite.to("#path", 0.8, { drawSVG: "53% 70%", ease: "power1.inOut" });
+    TweenLite.to("#pathTwo", 0.8, { drawSVG: "48% 65%", ease: "power1.inOut" });
     console.log("menu-hover");
   } else {
     // HOME hover
@@ -277,13 +315,72 @@ svgButton.addEventListener("click", () => {
     // MENU → HOME
     TweenLite.to("#path", 1.5, { drawSVG: "2% 15%", ease: "power1.inOut" });
     TweenLite.to("#pathTwo", 1.5, { drawSVG: "2% 16%", ease: "power1.inOut" });
+    gsap.to(".overlay", {
+      duration: 0.6,
+      height: "0%",
+      ease: "power1.inOut",
+      borderBottomLeftRadius: "200%",
+      borderBottomRightRadius: "200%",
+    })
+    gsap.to(".navj", {
+      color: "#2D3025",
+      ease: "power1.inOut",
+      duration: 0.6,
+    });
+    gsap.to(".navs", {
+      color: "#2D3025",
+      ease: "power1.inOut",
+      duration: 0.6,
+    });
+    gsap.to(".navmenu", {
+      borderColor: "#242424",
+      backgroundColor: "#9a9a9a00",
+      ease: "power1.inOut",
+      duration: 0.6,
+    });
+    document.body.style.overflow = "";
     console.log("menu → home");
   } else {
     // HOME → MENU
     TweenLite.to("#path", 1.8, { drawSVG: "153% 170%", ease: "power1.inOut" });
     TweenLite.to("#pathTwo", 1.8, { drawSVG: "148% 165%", ease: "power1.inOut" });
+    gsap.to(".overlay", {
+      duration: 0.6,
+      height: "100%",
+      ease: "power1.inOut",
+      borderBottomLeftRadius: "0%",
+      borderBottomRightRadius: "0%",
+    })
+    gsap.to(".navj", {
+      color: "#bcbcbcff",
+      ease: "power1.inOut",
+      duration: 0.6,
+    });
+    gsap.to(".navs", {
+      color: "#e1e1deff",
+      ease: "power1.inOut",
+      duration: 0.6,
+    });
+    gsap.to(".navmenu", {
+      borderColor: "#D1FE07",
+      backgroundColor: "#F3F3EB",
+      ease: "power1.inOut",
+      duration: 0.6,
+    });
+    document.body.style.overflow = "hidden";
     console.log("home → menu");
   }
 
   isMenu = !isMenu; // toggle
+});
+
+gsap.to(".minihelmet", {
+  scrollTrigger: {
+    trigger: ".section-two",
+    start: "top center",
+    markers: false,
+  },
+  duration: 0.4,
+  opacity: 1,
+  ease: "none",
 });
