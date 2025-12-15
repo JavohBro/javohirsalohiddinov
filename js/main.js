@@ -9,11 +9,9 @@ window.addEventListener("load", () => {
       document.querySelector("#loader").remove();
     }
   });
-
   tl.to("#loader", { opacity: 0, duration: 0.6 })
-    .from(".hero", { y: 80, opacity: 0, duration: 0.8 }, "-=0.3");
+  .from(".hero", { y: 80, opacity: 0, duration: 0.8 }, "-=0.3");
 });
-
 
 gsap.to(".a", {
   scrollTrigger: {
@@ -377,10 +375,61 @@ svgButton.addEventListener("click", () => {
 gsap.to(".minihelmet", {
   scrollTrigger: {
     trigger: ".section-two",
-    start: "top center",
+    start: "top 500",
     markers: false,
   },
   duration: 0.4,
   opacity: 1,
   ease: "none",
+});
+
+gsap.to(".minihelmet-text-cover", {
+  scrollTrigger: {
+    trigger: ".section-two",
+    start: "top 500",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".minihelmet-text-cover").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".minihelmet-text", {
+  scrollTrigger: {
+    trigger: ".section-two",
+    start: "top 500",
+    markers: false,
+  },
+  delay: 0.6,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+
+const reveal = document.querySelector(".reveal");
+
+window.addEventListener("mousemove", e => {
+  gsap.to(reveal, {
+    duration: 1,
+    WebkitMaskImage: `radial-gradient(
+      circle 450px at ${e.clientX}px ${e.clientY}px,
+      black 80%,
+      transparent 101%
+    )`,
+    ease: "power2.out"
+  });
+});
+
+window.addEventListener("mousemove", e => {
+  const r = 100;
+
+  gsap.to(reveal, {
+    duration: 1,
+    WebkitMaskImage: `radial-gradient(
+      circle ${r}px at ${e.clientX}px ${e.clientY}px,
+      black 60%,
+      transparent 101%
+    )`
+  });
 });
