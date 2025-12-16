@@ -59,7 +59,7 @@ body{
 }
 
 .reveal {
-    background: url("media/mainMe/hamilton.jpg") center/cover no-repeat;
+    background: url("media/mainMe/hamilton3.jpg") center/cover no-repeat;
     mask-image: radial-gradient(circle 10vh at 0% 0%, black 80%, transparent 101%);
     mask-repeat: no-repeat;
     mask-size: 100% 100%;
