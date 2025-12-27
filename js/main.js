@@ -1,4 +1,5 @@
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, PixiPlugin);
+PixiPlugin.registerPIXI(PIXI);
 
 document.body.style.overflow = "hidden";
 
@@ -14,20 +15,30 @@ window.addEventListener("load", () => {
 });
 
 gsap.to(".a", {
-  scrollTrigger: {
+    scrollTrigger: {
     trigger: ".a",
     start: "top top",
     scrub: true,
     pin: true,
-    markers: false
+    markers: false,
   },
-  x: "70vh",
+  x: "65vh",
   y: "220vh",
   ease: "none",
   // width: "80vh",
   width: "38%",
   height: "45vh",
-  backgroundColor: '#737373'
+});
+
+gsap.to(".theme", {
+    scrollTrigger: {
+    trigger: ".theme",
+    start: "top top",
+    scrub: true,
+    markers: false,
+  },
+  ease: "none",
+  opacity: 1,
 });
 
 gsap.to(".b", {
@@ -284,12 +295,10 @@ svgButton.addEventListener("mouseenter", () => {
     // MENU hover
     TweenLite.to("#path", 0.8, { drawSVG: "53% 70%", ease: "power1.inOut" });
     TweenLite.to("#pathTwo", 0.8, { drawSVG: "48% 65%", ease: "power1.inOut" });
-    console.log("menu-hover");
   } else {
     // HOME hover
     TweenLite.to("#path", 0.4, { drawSVG: "2% 15%", ease: "power1.inOut" });
     TweenLite.to("#pathTwo", 0.4, { drawSVG: "2% 16%", ease: "power1.inOut" });
-    console.log("home-hover");
   }
 });
 
@@ -298,12 +307,10 @@ svgButton.addEventListener("mouseleave", () => {
     // MENU leave
     TweenLite.fromTo("#path", 0.8, {drawSVG: "53% 70%"}, {drawSVG: "0% 12%", ease: "power1.inOut"});
     TweenLite.fromTo("#pathTwo", 0.8, {drawSVG: "48% 65%"}, {drawSVG: "0% 12%", ease: "power1.inOut"});
-    console.log("menu-leave");
   } else {
     // HOME leave
     TweenLite.to("#path", 0.4, { drawSVG: "0% 12%", ease: "power1.inOut" });
     TweenLite.to("#pathTwo", 0.4, { drawSVG: "0% 12%", ease: "power1.inOut" });
-    console.log("home-leave");
   }
 });
 
@@ -337,7 +344,6 @@ svgButton.addEventListener("click", () => {
       duration: 0.6,
     });
     document.body.style.overflow = "";
-    console.log("menu → home");
   } else {
     // HOME → MENU
     TweenLite.to("#path", 1.8, { drawSVG: "153% 170%", ease: "power1.inOut" });
@@ -366,7 +372,6 @@ svgButton.addEventListener("click", () => {
       duration: 0.6,
     });
     document.body.style.overflow = "hidden";
-    console.log("home → menu");
   }
 
   isMenu = !isMenu; // toggle
@@ -375,7 +380,7 @@ svgButton.addEventListener("click", () => {
 gsap.to(".minihelmet", {
   scrollTrigger: {
     trigger: ".section-two",
-    start: "top 500",
+    start: "top 550",
     markers: false,
   },
   duration: 0.4,
@@ -386,7 +391,7 @@ gsap.to(".minihelmet", {
 gsap.to(".minihelmet-text-cover", {
   scrollTrigger: {
     trigger: ".section-two",
-    start: "top 500",
+    start: "top 550",
     markers: false,
     onEnter: () => {
       document.querySelector(".minihelmet-text-cover").classList.add("cover-animation");
@@ -397,7 +402,7 @@ gsap.to(".minihelmet-text-cover", {
 gsap.to(".minihelmet-text", {
   scrollTrigger: {
     trigger: ".section-two",
-    start: "top 500",
+    start: "top 550",
     markers: false,
   },
   delay: 0.6,
@@ -406,7 +411,167 @@ gsap.to(".minihelmet-text", {
   opacity: 1,
 });
 
+gsap.to(".minihelmet-text-cover", {
+  scrollTrigger: {
+    trigger: ".section-two",
+    start: "top 450",
+    markers: false,
+    onEnter: () => {
+      document.querySelector("#textCoverTwo").classList.add("cover-animation");
+    }
+  },
+});
 
+gsap.to("#sectionTwoTextTwo", {
+  scrollTrigger: {
+    trigger: ".section-two",
+    start: "top 450",
+    markers: false,
+  },
+  delay: 0.6,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".minihelmet-text-cover", {
+  scrollTrigger: {
+    trigger: ".section-two",
+    start: "top 420",
+    markers: false,
+    onEnter: () => {
+      document.querySelector("#textCoverThree").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to("#sectionTwoTextThree", {
+  scrollTrigger: {
+    trigger: ".section-two",
+    start: "top 420",
+    markers: false,
+  },
+  delay: 0.6,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".minihelmet-text-cover", {
+  scrollTrigger: {
+    trigger: ".section-two",
+    start: "top 390",
+    markers: false,
+    onEnter: () => {
+      document.querySelector("#textCoverFour").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to("#sectionTwoTextFour", {
+  scrollTrigger: {
+    trigger: ".section-two",
+    start: "top 390",
+    markers: false,
+  },
+  delay: 0.6,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".minihelmet-text-cover", {
+  scrollTrigger: {
+    trigger: ".section-two",
+    start: "top 350",
+    markers: false,
+    onEnter: () => {
+      document.querySelector("#textCoverFive").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to("#sectionTwoTextFive", {
+  scrollTrigger: {
+    trigger: ".section-two",
+    start: "top 350",
+    markers: false,
+  },
+  delay: 0.6,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".minihelmet-text-cover", {
+  scrollTrigger: {
+    trigger: ".section-two",
+    start: "top 250",
+    markers: false,
+    onEnter: () => {
+      document.querySelector("#textCoverSix").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to("#sectionTwoTextSix", {
+  scrollTrigger: {
+    trigger: ".section-two",
+    start: "top 250",
+    markers: false,
+  },
+  delay: 0.6,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".minihelmet-text-cover", {
+  scrollTrigger: {
+    trigger: ".section-two",
+    start: "top 150",
+    markers: false,
+    onEnter: () => {
+      document.querySelector("#textCoverSeven").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to("#sectionTwoTextSeven", {
+  scrollTrigger: {
+    trigger: ".section-two",
+    start: "top 150",
+    markers: false,
+  },
+  delay: 0.6,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".minihelmet-text-cover", {
+  scrollTrigger: {
+    trigger: ".section-two",
+    start: "top 50",
+    markers: false,
+    onEnter: () => {
+      document.querySelector("#textCoverEight").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to("#sectionTwoTextEight", {
+  scrollTrigger: {
+    trigger: ".section-two",
+    start: "top 50",
+    markers: false,
+  },
+  delay: 0.6,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+/////////////////////// section-2 end
 const reveal = document.querySelector(".reveal");
 
 window.addEventListener("mousemove", e => {

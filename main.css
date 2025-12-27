@@ -65,6 +65,12 @@ body{
     mask-size: 100% 100%;
 }
 
+.theme {
+    background-color: rgba(0, 0, 0, 0.642);
+    opacity: 0;
+
+}
+
 .sign{
     overflow: visible;
     margin-top: -60%;
@@ -243,11 +249,8 @@ body{
 }
 .section-two {
     width: 80%;
-    height: 50vh;
     margin-left: 10%;
     margin-top: 50vh;
-    /* background-color: #ffaa00; */
-    border: 1px solid rgb(255, 255, 255);
 }
 
 .minihelmet {
@@ -269,32 +272,105 @@ body{
 }
 .minihelmet-text-cover{
     width: 0%;
-    margin-left: 44%;
-    height: 2vh;
+    margin-left: 0%;
+    height: 100%;
     background-color: rgb(43, 255, 0);
-    margin-top: -2vh;
-    position: relative;
 }
 
 @keyframes helmet-taxt-anim{
     0%{
         width: 0%;
-        margin-left: 44%;
+        margin-left: 0%;
     }
     60%{
-        width: 12%;
-        margin-left: 44%;
+        width: 100%;
+        margin-left: 0%;
+    }
+    70%{
+        width: 100%;
+        margin-left: 0%;
     }
     100%{
         width: 0%;
-        margin-left: 56%;
+        margin-left: 100%;
     }
 }
 
-.cover-animation{
+.cover-animation {
     animation: helmet-taxt-anim 1s ease-in-out forwards;
 }
 
+.section-two-text-one {
+    width: 18%;
+    margin-left: 41%;
+    height: 2vh;
+    margin-top: -2vh;
+}
+
+.section-two-text-two {
+    width: 84%;
+    margin-left: 8%;
+    height: 13.5vh;
+    margin-top: -94vh;
+}
+
+.section-two-text-three {
+    width: 88%;
+    margin-left: 6%;
+    height: 14vh;
+}
+
+.section-two-text-four {
+    width: 80%;
+    margin-left: 10%;
+    height: 14vh;
+}
+
+.section-two-text-five {
+    width: 94%;
+    margin-left: 3%;
+    height: 14vh;
+}
+
+.section-two-text-six {
+    width: 94%;
+    margin-left: 3%;
+    height: 14vh;
+}
+
+.section-two-text-seven {
+    width: 72%;
+    margin-left: 14%;
+    height: 14vh;
+}
+.section-two-text-eight {
+    width: 35%;
+    margin-left: 32%;
+    height: 14vh;
+}
+.cover-cover {
+    /* border: 1px solid red; */
+    position: relative;
+}
+
+.section-two-content {
+    font-family: "Mona Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "wdth" 90;
+    font-size: 16vh;
+    text-align: center;
+    color: #e1e1deff;
+    margin-top: 8vh;
+    line-height: 6vh;
+    opacity: 0;
+}
+
+.greentxt {
+    font-family: 'Brier-Regular', serif;
+    color: #B2C73A;
+}
 .d {
     width: 10%;
     height: 50vh;
