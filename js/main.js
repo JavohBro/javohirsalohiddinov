@@ -685,7 +685,7 @@ gsap.to(".minihelmet-text-cover", {
   scrollTrigger: {
     trigger: ".section-three",
     start: "top 80%",
-    markers: true,
+    markers: false,
     onEnter: () => {
       document.querySelector(".section-three-cover1").classList.add("cover-animation");
     }
