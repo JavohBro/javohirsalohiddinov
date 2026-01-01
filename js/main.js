@@ -141,28 +141,42 @@ gsap.to(".text-loop-left", {
 });
 
 gsap.to(".navj", {
-  scrollTrigger: {
-    trigger: ".nav",
-    start: "top 2%",
-    scrub: true,
-    markers: false,
-  },
-  color: "#bcbcbcff",
-  ease: "none",
-  fontSize: "5vh",
+  color: "#2D3025",
 });
 
 gsap.to(".navs", {
-  scrollTrigger: {
-    trigger: ".nav",
-    start: "top 2%",
-    scrub: true,
-    markers: false,
-  },
-  color: "#e1e1deff",
-  ease: "none",
-  fontSize: "4.5vh",
+  color: "#2D3025",
 });
+
+gsap.fromTo("#navj", {
+    color: "#2D3025",
+  },
+  {
+    scrollTrigger: {
+      trigger: ".nav",
+      start: "top 2%",
+      scrub: true,
+    },
+    color: "#bcbcbcff",
+    ease: "none",
+    fontSize: "5vh",
+  }
+);
+
+gsap.fromTo("#navs", {
+    color: "#2D3025",
+  },
+  {
+    scrollTrigger: {
+      trigger: ".nav",
+      start: "top 2%",
+      scrub: true,
+    },
+    color: "#e1e1deff",
+    ease: "none",
+    fontSize: "4.5vh",
+  }
+);
 
 gsap.to(".buttons", {
   scrollTrigger: {
@@ -597,4 +611,95 @@ window.addEventListener("mousemove", e => {
       transparent 101%
     )`
   });
+});
+
+
+////////////// section-3 start
+
+gsap.to(".section-three", {
+  scrollTrigger: {
+    trigger: ".section-three",
+    start: "top bottom",
+    end: "3000 top",
+    scrub: true,
+    markers: false,
+  },
+  ease: "none",
+  x: "-81%",
+});
+
+gsap.to(".section-three", {
+  scrollTrigger: {
+    trigger: ".section-three",
+    start: "top 40",
+    end: "3000 top",
+    scrub: true,
+    pin: true,
+    markers: false,
+  },
+  ease: "none",
+});
+
+gsap.to("body", {
+  scrollTrigger: {
+    trigger: ".section-three",
+    start: "top 40",
+    end: "3000 top",
+    scrub: true,
+    markers: false,
+  },
+  backgroundColor: "#e1e1deff",
+  ease: "none",
+});
+
+gsap.fromTo(
+  "#navj",
+  { color: "#bcbcbcff" },
+  {
+    scrollTrigger: {
+      trigger: ".section-three",
+      start: "top 40",
+      end: "3000 top",
+      scrub: true,
+    },
+    color: "#2D3025",
+    ease: "none"
+  }
+);
+gsap.fromTo(
+  "#navs",
+  { color: "#e1e1deff" },
+  {
+    scrollTrigger: {
+      trigger: ".section-three",
+      start: "top 40",
+      end: "3000 top",
+      scrub: true,
+    },
+    color: "#2D3025",
+    ease: "none"
+  }
+);
+
+gsap.to(".minihelmet-text-cover", {
+  scrollTrigger: {
+    trigger: ".section-three",
+    start: "top 80%",
+    markers: true,
+    onEnter: () => {
+      document.querySelector(".section-three-cover1").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".box1-text", {
+  scrollTrigger: {
+    trigger: ".section-three",
+    start: "top 80%",
+    markers: false,
+  },
+  delay: 0.6,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
 });
