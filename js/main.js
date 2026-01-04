@@ -201,7 +201,18 @@ gsap.to(".navbutton", {
 });
 
 gsap.to(".navmenu", {
-  scrollTrigger: {
+  height: "9.6vh",
+  borderColor: "#242424",
+  backgroundColor: "#9a9a9a00",
+});
+
+gsap.fromTo(".navmenu", {
+    height: "9.6vh",
+    borderColor: "#242424",
+    backgroundColor: "#9a9a9a00",
+  },
+  {
+    scrollTrigger: {
     trigger: ".nav",
     start: "top 2%",
     scrub: true,
@@ -648,7 +659,7 @@ gsap.to("body", {
     scrub: true,
     markers: false,
   },
-  backgroundColor: "#e1e1deff",
+  backgroundColor: "#F4F4ED",
   ease: "none",
 });
 
@@ -680,25 +691,495 @@ gsap.fromTo(
     ease: "none"
   }
 );
+gsap.fromTo(".navmenu", {
+    // height: "8.6vh",
+    borderColor: "#D1FE07",
+    backgroundColor: "#F3F3EB",
+  },
+  {
+    scrollTrigger: {
+    trigger: ".section-three",
+    start: "top 40",
+    end: "3000 top",
+    scrub: true,
+  },
+  // height: "8.6vh",
+  borderColor: "#242424",
+  backgroundColor: "#9a9a9a00",
+  ease: "none",
+});
 
 gsap.to(".minihelmet-text-cover", {
   scrollTrigger: {
     trigger: ".section-three",
     start: "top 80%",
-    markers: true,
+    markers: false,
     onEnter: () => {
       document.querySelector(".section-three-cover1").classList.add("cover-animation");
     }
   },
 });
 
-gsap.to(".box1-text", {
+gsap.to(".text-visible-1", {
   scrollTrigger: {
     trigger: ".section-three",
     start: "top 80%",
     markers: false,
   },
-  delay: 0.6,
+  delay: 0.7,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".minihelmet-text-cover", {
+  scrollTrigger: {
+    trigger: ".section-three",
+    start: "top center",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section-three-cover2").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".text-visible-2", {
+  scrollTrigger: {
+    trigger: ".section-three",
+    start: "top center",
+    markers: false,
+  },
+  delay: 0.7,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".minihelmet-text-cover", {
+  scrollTrigger: {
+    trigger: ".section-three",
+    start: "top 75%",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section-three-cover3").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".text-visible-3", {
+  scrollTrigger: {
+    trigger: ".section-three",
+    start: "top 75%",
+    markers: false,
+  },
+  delay: 0.7,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".minihelmet-text-cover", {
+  scrollTrigger: {
+    trigger: ".section-three",
+    start: "top 70%",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section-three-cover4").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".text-visible-4", {
+  scrollTrigger: {
+    trigger: ".section-three",
+    start: "top 70%",
+    markers: false,
+  },
+  delay: 0.7,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".minihelmet-text-cover", {
+  scrollTrigger: {
+    trigger: ".box5-cover",
+    start: "550 top",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section-three-cover5").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".text-visible-5", {
+  scrollTrigger: {
+    trigger: ".box5-cover",
+    start: "550 top",
+    markers: false,
+  },
+  delay: 0.7,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+
+gsap.to(".minihelmet-text-cover", {
+  scrollTrigger: {
+    trigger: ".section-three-cover6 ",
+    start: "200 top",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section-three-cover6").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".text-visible-6", {
+  scrollTrigger: {
+    trigger: ".section-three-cover6 ",
+    start: "200 top",
+    markers: false,
+  },
+  delay: 0.7,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".minihelmet-text-cover", {
+  scrollTrigger: {
+    trigger: ".box7-cover",
+    start: "600 top",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section-three-cover7").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".text-visible-7", {
+  scrollTrigger: {
+    trigger: ".box7-cover",
+    start: "600 top",
+    markers: false,
+  },
+  delay: 0.7,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".minihelmet-text-cover", {
+  scrollTrigger: {
+    trigger: ".box8",
+    start: "1300 top",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section-three-cover8").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".text-visible-8", {
+  scrollTrigger: {
+    trigger: ".box8",
+    start: "1300 top",
+    markers: false,
+  },
+  delay: 0.7,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".minihelmet-text-cover", {
+  scrollTrigger: {
+    trigger: ".box9",
+    start: "2000 top",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section-three-cover9").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".text-visible-9", {
+  scrollTrigger: {
+    trigger: ".box9",
+    start: "2000 top",
+    markers: false,
+  },
+  delay: 0.7,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".minihelmet-text-cover", {
+  scrollTrigger: {
+    trigger: ".box10",
+    start: "1200 top",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section-three-cover10").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".text-visible-10", {
+  scrollTrigger: {
+    trigger: ".box10",
+    start: "1200 top",
+    markers: false,
+  },
+  delay: 0.7,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".minihelmet-text-cover", {
+  scrollTrigger: {
+    trigger: ".box11",
+    start: "2600 top",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section-three-cover11").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".text-visible-11", {
+  scrollTrigger: {
+    trigger: ".box11",
+    start: "2600 top",
+    markers: false,
+  },
+  delay: 0.7,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+
+gsap.to(".minihelmet-text-cover", {
+  scrollTrigger: {
+    trigger: ".box12",
+    start: "2200 top",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section-three-cover12").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".text-visible-12", {
+  scrollTrigger: {
+    trigger: ".box12",
+    start: "2200 top",
+    markers: false,
+  },
+  delay: 0.7,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+/////////////////////// section-3 END
+//////////////////// section-4 START
+
+gsap.to(".img-box-left", {
+  scrollTrigger: {
+    trigger: ".section-four",
+    start: "top bottom",
+    end: "bottom center",
+    scrub: true,
+    markers: false,
+  },
+  marginLeft: "-8%",
+  ease: "none",
+})
+
+gsap.to(".section-four", {
+  scrollTrigger: {
+    trigger: ".section-four",
+    start: "top 15%",
+    end: "bottom center",
+    pin: true,
+    markers: false,
+  },
+  ease: "none",
+})
+
+gsap.to(".text-box-left", {
+  scrollTrigger: {
+    trigger: ".section-four",
+    start: "top bottom",
+    end: "bottom center",
+    scrub: true,
+    markers: false,
+  },
+  marginLeft: "5%",
+  ease: "none",
+})
+
+gsap.to(".text-box-right", {
+  scrollTrigger: {
+    trigger: ".section-four",
+    start: "top bottom",
+    end: "bottom center",
+    scrub: true,
+    markers: false,
+  },
+  marginLeft: "3%",
+  ease: "none",
+})
+
+gsap.to(".img-box-right", {
+  scrollTrigger: {
+    trigger: ".section-four",
+    start: "top bottom",
+    end: "bottom center",
+    scrub: true,
+    markers: false,
+  },
+  marginLeft: "5%",
+  ease: "none",
+})
+
+gsap.to(".section-four", {
+  scrollTrigger: {
+    trigger: ".section-four",
+    start: "top 70%",
+    markers: false,
+    onEnter: () => {
+      document.querySelector("#oncover1").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".section-four", {
+  scrollTrigger: {
+    trigger: ".section-four",
+    start: "top 70%",
+    markers: false,
+    onEnter: () => {
+      document.querySelector("#oncover2").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to("#onvisible1", {
+  scrollTrigger: {
+    trigger: ".section-four",
+    start: "top 70%",
+    markers: false,
+  },
+  delay: 0.7,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".section-four", {
+  scrollTrigger: {
+    trigger: ".section-four",
+    start: "top 50%",
+    markers: false,
+    onEnter: () => {
+      document.querySelector("#oncover3").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".section-four", {
+  scrollTrigger: {
+    trigger: ".section-four",
+    start: "top 50%",
+    markers: false,
+    onEnter: () => {
+      document.querySelector("#oncover4").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to("#onvisible2", {
+  scrollTrigger: {
+    trigger: ".section-four",
+    start: "top 50%",
+    markers: false,
+  },
+  delay: 0.7,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".section-four", {
+  scrollTrigger: {
+    trigger: ".section-four",
+    start: "top 70%",
+    markers: false,
+    onEnter: () => {
+      document.querySelector("#offcover1").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".section-four", {
+  scrollTrigger: {
+    trigger: ".section-four",
+    start: "top 70%",
+    markers: false,
+    onEnter: () => {
+      document.querySelector("#offcover2").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to("#offvisible1", {
+  scrollTrigger: {
+    trigger: ".section-four",
+    start: "top 70%",
+    markers: false,
+  },
+  delay: 0.7,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".section-four", {
+  scrollTrigger: {
+    trigger: ".section-four",
+    start: "top 50%",
+    markers: false,
+    onEnter: () => {
+      document.querySelector("#offcover3").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".section-four", {
+  scrollTrigger: {
+    trigger: ".section-four",
+    start: "top 50%",
+    markers: false,
+    onEnter: () => {
+      document.querySelector("#offcover4").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to("#offvisible2", {
+  scrollTrigger: {
+    trigger: ".section-four",
+    start: "top 50%",
+    markers: false,
+  },
+  delay: 0.7,
   duration: 0,
   ease: "none",
   opacity: 1,
