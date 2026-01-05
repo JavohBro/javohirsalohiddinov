@@ -148,33 +148,27 @@ gsap.to(".navs", {
   color: "#2D3025",
 });
 
-gsap.fromTo("#navj", {
-    color: "#2D3025",
+gsap.to("#navj", {
+  scrollTrigger: {
+    trigger: ".nav",
+    start: "top 2%",
+    scrub: true,
   },
-  {
-    scrollTrigger: {
-      trigger: ".nav",
-      start: "top 2%",
-      scrub: true,
-    },
-    color: "#bcbcbcff",
-    ease: "none",
-    fontSize: "5vh",
+  color: "#bcbcbcff",
+  ease: "none",
+  fontSize: "5vh",
   }
 );
 
-gsap.fromTo("#navs", {
-    color: "#2D3025",
+gsap.to("#navs", {
+  scrollTrigger: {
+    trigger: ".nav",
+    start: "top 2%",
+    scrub: true,
   },
-  {
-    scrollTrigger: {
-      trigger: ".nav",
-      start: "top 2%",
-      scrub: true,
-    },
-    color: "#e1e1deff",
-    ease: "none",
-    fontSize: "4.5vh",
+  color: "#e1e1deff",
+  ease: "none",
+  fontSize: "4.5vh",
   }
 );
 
@@ -206,13 +200,8 @@ gsap.to(".navmenu", {
   backgroundColor: "#9a9a9a00",
 });
 
-gsap.fromTo(".navmenu", {
-    height: "9.6vh",
-    borderColor: "#242424",
-    backgroundColor: "#9a9a9a00",
-  },
-  {
-    scrollTrigger: {
+gsap.to(".navmenu", {
+  scrollTrigger: {
     trigger: ".nav",
     start: "top 2%",
     scrub: true,
@@ -1000,7 +989,7 @@ gsap.to(".img-box-left", {
   },
   marginLeft: "-8%",
   ease: "none",
-})
+});
 
 gsap.to(".section-four", {
   scrollTrigger: {
@@ -1011,7 +1000,7 @@ gsap.to(".section-four", {
     markers: false,
   },
   ease: "none",
-})
+});
 
 gsap.to(".text-box-left", {
   scrollTrigger: {
@@ -1023,7 +1012,7 @@ gsap.to(".text-box-left", {
   },
   marginLeft: "5%",
   ease: "none",
-})
+});
 
 gsap.to(".text-box-right", {
   scrollTrigger: {
@@ -1035,7 +1024,7 @@ gsap.to(".text-box-right", {
   },
   marginLeft: "3%",
   ease: "none",
-})
+});
 
 gsap.to(".img-box-right", {
   scrollTrigger: {
@@ -1047,7 +1036,7 @@ gsap.to(".img-box-right", {
   },
   marginLeft: "5%",
   ease: "none",
-})
+});
 
 gsap.to(".section-four", {
   scrollTrigger: {
