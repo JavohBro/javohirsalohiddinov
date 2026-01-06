@@ -31,7 +31,7 @@ gsap.to(".a", {
 });
 
 gsap.to(".theme", {
-    scrollTrigger: {
+  scrollTrigger: {
     trigger: ".theme",
     start: "top top",
     scrub: true,
@@ -148,33 +148,27 @@ gsap.to(".navs", {
   color: "#2D3025",
 });
 
-gsap.fromTo("#navj", {
-    color: "#2D3025",
+gsap.to("#navj", {
+  scrollTrigger: {
+    trigger: ".nav",
+    start: "top 2%",
+    scrub: true,
   },
-  {
-    scrollTrigger: {
-      trigger: ".nav",
-      start: "top 2%",
-      scrub: true,
-    },
-    color: "#bcbcbcff",
-    ease: "none",
-    fontSize: "5vh",
+  color: "#bcbcbcff",
+  ease: "none",
+  fontSize: "5vh",
   }
 );
 
-gsap.fromTo("#navs", {
-    color: "#2D3025",
+gsap.to("#navs", {
+  scrollTrigger: {
+    trigger: ".nav",
+    start: "top 2%",
+    scrub: true,
   },
-  {
-    scrollTrigger: {
-      trigger: ".nav",
-      start: "top 2%",
-      scrub: true,
-    },
-    color: "#e1e1deff",
-    ease: "none",
-    fontSize: "4.5vh",
+  color: "#e1e1deff",
+  ease: "none",
+  fontSize: "4.5vh",
   }
 );
 
@@ -206,13 +200,8 @@ gsap.to(".navmenu", {
   backgroundColor: "#9a9a9a00",
 });
 
-gsap.fromTo(".navmenu", {
-    height: "9.6vh",
-    borderColor: "#242424",
-    backgroundColor: "#9a9a9a00",
-  },
-  {
-    scrollTrigger: {
+gsap.to(".navmenu", {
+  scrollTrigger: {
     trigger: ".nav",
     start: "top 2%",
     scrub: true,
@@ -376,6 +365,7 @@ svgButton.addEventListener("click", () => {
     gsap.to(".overlay", {
       duration: 0.6,
       height: "100%",
+      width: "100%",
       ease: "power1.inOut",
       borderBottomLeftRadius: "0%",
       borderBottomRightRadius: "0%",
@@ -677,6 +667,7 @@ gsap.fromTo(
     ease: "none"
   }
 );
+
 gsap.fromTo(
   "#navs",
   { color: "#e1e1deff" },
@@ -691,8 +682,8 @@ gsap.fromTo(
     ease: "none"
   }
 );
+
 gsap.fromTo(".navmenu", {
-    // height: "8.6vh",
     borderColor: "#D1FE07",
     backgroundColor: "#F3F3EB",
   },
@@ -703,7 +694,6 @@ gsap.fromTo(".navmenu", {
     end: "3000 top",
     scrub: true,
   },
-  // height: "8.6vh",
   borderColor: "#242424",
   backgroundColor: "#9a9a9a00",
   ease: "none",
@@ -990,64 +980,77 @@ gsap.to(".text-visible-12", {
 /////////////////////// section-3 END
 //////////////////// section-4 START
 
+gsap.to(".section-four", {
+  scrollTrigger: {
+    trigger: ".section-four",
+    start: "top 15%",
+    end: "bottom top",
+    pin: true,
+    pinSpacing: false,
+    markers: false,
+  },
+  ease: "none",
+});
+
 gsap.to(".img-box-left", {
   scrollTrigger: {
     trigger: ".section-four",
     start: "top bottom",
-    end: "bottom center",
+    end: "bottom top",
     scrub: true,
     markers: false,
   },
   marginLeft: "-8%",
   ease: "none",
-})
-
-gsap.to(".section-four", {
-  scrollTrigger: {
-    trigger: ".section-four",
-    start: "top 15%",
-    end: "bottom center",
-    pin: true,
-    markers: false,
-  },
-  ease: "none",
-})
+});
 
 gsap.to(".text-box-left", {
   scrollTrigger: {
     trigger: ".section-four",
     start: "top bottom",
-    end: "bottom center",
+    end: "bottom top",
     scrub: true,
     markers: false,
   },
   marginLeft: "5%",
   ease: "none",
-})
+});
 
 gsap.to(".text-box-right", {
   scrollTrigger: {
     trigger: ".section-four",
     start: "top bottom",
-    end: "bottom center",
+    end: "bottom top",
     scrub: true,
     markers: false,
   },
   marginLeft: "3%",
   ease: "none",
-})
+});
 
 gsap.to(".img-box-right", {
   scrollTrigger: {
     trigger: ".section-four",
     start: "top bottom",
-    end: "bottom center",
+    end: "bottom top",
     scrub: true,
     markers: false,
   },
   marginLeft: "5%",
   ease: "none",
-})
+});
+
+gsap.to(".on-img", {
+  scrollTrigger: {
+    trigger: ".section-four",
+    start: "top 70%",
+    markers: false,
+  },
+  delay: 1.2,
+  duration: 0.6,
+  ease: "bounce.in",
+  opacity: 1,
+});
 
 gsap.to(".section-four", {
   scrollTrigger: {
@@ -1184,3 +1187,154 @@ gsap.to("#offvisible2", {
   ease: "none",
   opacity: 1,
 });
+
+//////////////////// section-4 END
+//////////////////// section-5 START
+
+gsap.fromTo("#navj",
+  { color: "#2D3025" },
+  {
+    scrollTrigger: {
+      trigger: ".section-five",
+      start: "top 2%",
+      end: "50 top",
+      scrub: true,
+    },
+    color: "#bcbcbcff",
+    ease: "none"
+  }
+);
+
+gsap.fromTo("#navs",
+  { color: "#2D3025" },
+  {
+    scrollTrigger: {
+      trigger: ".section-five",
+      start: "top 2%",
+      end: "50 top",
+      scrub: true,
+    },
+    color: "#e1e1deff",
+    ease: "none"
+  }
+);
+
+gsap.fromTo(".navmenu", {
+    borderColor: "#242424",
+    backgroundColor: "#9a9a9a00",
+  },
+  {
+    scrollTrigger: {
+      trigger: ".section-five",
+      start: "top 2%",
+      end: "50 top",
+      scrub: true,
+    },
+    borderColor: "#D1FE07",
+    backgroundColor: "#F3F3EB",
+    ease: "none",
+  }
+);
+
+///////////////////// section-5 END
+//////////////////// section-6 START
+
+gsap.to(".section-six", {
+  scrollTrigger: {
+    trigger: ".section-six",
+    start: "top 70%",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section6-cover1").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".section-six", {
+  scrollTrigger: {
+    trigger: ".section-six",
+    start: "top 70%",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section6-cover2").classList.add("cover-animation-two");
+    }
+  },
+});
+
+gsap.to("#s6t1", {
+  scrollTrigger: {
+    trigger: ".section-six",
+    start: "top 70%",
+    markers: false,
+  },
+  delay: 0.7,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".section-six", {
+  scrollTrigger: {
+    trigger: ".section-six",
+    start: "top 70%",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section6-cover3").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".section-six", {
+  scrollTrigger: {
+    trigger: ".section-six",
+    start: "top 70%",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section6-cover4").classList.add("cover-animation-two");
+    }
+  },
+});
+
+gsap.to(".section-six", {
+  scrollTrigger: {
+    trigger: ".section-six",
+    start: "top 70%",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section6-cover5").classList.add("cover-animation-three");
+    }
+  },
+});
+
+gsap.to(".section-six", {
+  scrollTrigger: {
+    trigger: ".section-six",
+    start: "top 70%",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section6-cover6").classList.add("cover-animation-two");
+    }
+  },
+});
+gsap.to("#s6t2", {
+  scrollTrigger: {
+    trigger: ".section-six",
+    start: "top 70%",
+    markers: false,
+  },
+  delay: 0.7,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".odd-column", {
+  scrollTrigger: {
+    trigger: ".section6-box2",
+    start: "top bottom",
+    end: "bottom center",
+    scrub: true,
+  },
+  marginTop: "0vh",
+  ease: "none",
+})

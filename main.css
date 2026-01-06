@@ -314,6 +314,57 @@ img::selection {
     animation: helmet-taxt-anim 1s ease-in-out forwards;
 }
 
+@keyframes helmet-taxt-anim-two {
+    0% {
+        width: 0%;
+        margin-left: 0%;
+    }
+
+    60% {
+        width: 100%;
+        margin-left: 0%;
+    }
+
+    80% {
+        width: 100%;
+        margin-left: 0%;
+    }
+
+    100% {
+        width: 0%;
+        margin-left: 100%;
+    }
+}
+
+.cover-animation-two {
+    animation: helmet-taxt-anim-two 1.2s ease-in-out forwards;
+}
+
+@keyframes helmet-taxt-anim-three {
+    0% {
+        width: 0%;
+        margin-left: 0%;
+    }
+
+    70% {
+        width: 100%;
+        margin-left: 0%;
+    }
+
+    85% {
+        width: 100%;
+        margin-left: 0%;
+    }
+
+    100% {
+        width: 0%;
+        margin-left: 100%;
+    }
+}
+
+.cover-animation-three {
+    animation: helmet-taxt-anim-three 1.2s ease-in-out forwards;
+}
 .section-two-text-one {
     width: 18%;
     margin-left: 41%;
@@ -634,7 +685,7 @@ img::selection {
 
 .section-four{
     width: 300vh;
-    height: 90vh;
+    height: 88vh;
     margin-top: 20vh;
     position: relative;
     color: #282C20;
@@ -778,6 +829,198 @@ img::selection {
     rotate: 180deg;
     position: relative;
     z-index: 1;
+}
+.on-img{
+    /* margin-top: -60vh; */
+    width: 11%;
+    margin-left: -10%;
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+}
+
+/* \\\\\\\  SECTION-4 END  /////// */
+/* /////// SECTION-5 START \\\\\\\ */
+
+.section-five {
+    width: 100%;
+    position: relative;
+    z-index: 3;
+}
+
+/* \\\\\\\\\ SECTION-5 END   //////// */
+/* ///////// SECTION-6 START \\\\\\\\ */
+
+.section-six {
+    width: 100%;
+    height: 400vh;
+    margin-top: -1vh;
+    background-color: #111112;
+    position: relative;
+}
+
+.section6-box1 {
+    width: 70%;
+    margin-left: 1%;
+    padding-top: 8vh;
+}
+.section6-text1 {
+    float: left;
+}
+.section6-text1 h1{
+    font-family: "Mona Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 95;
+    font-weight: 700;
+    font-size: 9vh;
+    line-height: 0.9;
+    color: #F4F4ED;
+}
+
+.section6-text1 span {
+    font-family: 'Brier-Regular', serif;
+    font-variation-settings: "wdth" 85;
+    color: #B2C73A;
+}
+
+.section6-cover1 {
+    background: #D1FE07;
+    width: 0%;
+    height: 9vh;
+    margin-top: -17vh;
+    position: relative;
+    z-index: 1;
+}
+
+.section6-cover2 {
+    background: #D1FE07;
+    width: 0%;
+    height: 9vh;
+    position: relative;
+    z-index: 1;
+}
+
+.section6-text2{
+    float: right;
+}
+.section6-text2 h1 {
+    font-family: "Mona Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 2.5vh;
+    font-variation-settings: "wdth" 98;
+    color: #B4B8A5;
+    line-height: 1.2;
+}
+
+.section6-cover3 {
+    background: #D1FE07;
+    width: 0%;
+    height: 3vh;
+    margin-top: -12vh;
+    position: relative;
+    z-index: 1;
+}
+.section6-cover4 {
+    background: #D1FE07;
+    width: 0%;
+    height: 3vh;
+    position: relative;
+    z-index: 1;
+}
+.section6-cover5 {
+    background: #D1FE07;
+    width: 0%;
+    height: 3vh;
+    position: relative;
+    z-index: 1;
+}
+.section6-cover6 {
+    background: #D1FE07;
+    width: 0%;
+    height: 3vh;
+    position: relative;
+    z-index: 1;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////// */
+.section6-box2 {
+    width: 98%;
+    height: 250vh;
+    margin-left: 1%;
+    margin-top: 40vh;
+    font-family: "Mona Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1.2vh;
+    color: #F4F4ED;
+    text-align: end;
+}
+
+.section6-box2 h1{
+    margin-top: 7vh;
+    transition: 0.4s ease-in-out;
+}
+
+.section6-box2 span {
+    color: #D2FF00;
+}
+
+.column1 {
+    width: 24%;
+    height: 100%;
+    float: left;
+}
+.column2 {
+    margin-left: 1%;
+}
+
+.odd-column {
+    margin-top: 50vh;
+}
+
+.clm1-row {
+    width: 100%;
+    margin-top: 2vh;
+}
+
+.clm1-row-imgbox img {
+    width: 100%;
+}
+
+.clm1-row-imgbox {
+    width: 60%;
+    height: 30vh;
+    margin-left: 20%;
+    margin-top: -42vh;
+    position: relative;
+    z-index: 1;
+    transition: 0.4s ease-in-out;
+}
+
+.clm1-row path{
+    transition: 0.4s ease-in;
+}
+
+.clm1-row:hover .clm1-row-imgbox {
+    width: 70%;
+    height: 35vh;
+    margin-left: 15%;
+    margin-top: -44vh;
+    transition: 0.4s ease-in-out;
+}
+
+.clm1-row:hover h1 {
+    margin-top: 4vh;
+    transition: 0.4s ease-in-out;
+}
+
+.clm1-row:hover path{
+    stroke: #D2FF00;
+    fill: #ffffff0a;
+    stroke-width: 0.2;
+    transition: 0.4s ease-out;
 }
 
 .d {
