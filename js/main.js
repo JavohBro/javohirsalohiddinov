@@ -31,7 +31,7 @@ gsap.to(".a", {
 });
 
 gsap.to(".theme", {
-    scrollTrigger: {
+  scrollTrigger: {
     trigger: ".theme",
     start: "top top",
     scrub: true,
@@ -336,8 +336,9 @@ svgButton.addEventListener("click", () => {
     TweenLite.to("#pathTwo", 1.5, { drawSVG: "2% 16%", ease: "power1.inOut" });
     gsap.to(".overlay", {
       duration: 0.6,
+      delay: 0.2,
       height: "0%",
-      ease: "power1.inOut",
+      ease: "power3.out",
       borderBottomLeftRadius: "200%",
       borderBottomRightRadius: "200%",
     })
@@ -357,6 +358,14 @@ svgButton.addEventListener("click", () => {
       ease: "power1.inOut",
       duration: 0.6,
     });
+    gsap.to(".menuText", {
+      delay: 0,
+      opacity: 0,
+      duration: 0.2,
+      marginTop: "2vh",
+      display: "none",
+      ease: "power1.out",
+    });
     document.body.style.overflow = "";
   } else {
     // HOME → MENU
@@ -365,7 +374,8 @@ svgButton.addEventListener("click", () => {
     gsap.to(".overlay", {
       duration: 0.6,
       height: "100%",
-      ease: "power1.inOut",
+      width: "100%",
+      ease: "power3.out",
       borderBottomLeftRadius: "0%",
       borderBottomRightRadius: "0%",
     })
@@ -384,6 +394,14 @@ svgButton.addEventListener("click", () => {
       backgroundColor: "#F3F3EB",
       ease: "power1.inOut",
       duration: 0.6,
+    });
+    gsap.to(".menuText", {
+      delay: 0.2,
+      opacity: 1,
+      duration: 0.6,
+      marginTop: "10vh",
+      display: "block",
+      ease: "power1.out",
     });
     document.body.style.overflow = "hidden";
   }
@@ -666,6 +684,7 @@ gsap.fromTo(
     ease: "none"
   }
 );
+
 gsap.fromTo(
   "#navs",
   { color: "#e1e1deff" },
@@ -680,8 +699,8 @@ gsap.fromTo(
     ease: "none"
   }
 );
+
 gsap.fromTo(".navmenu", {
-    // height: "8.6vh",
     borderColor: "#D1FE07",
     backgroundColor: "#F3F3EB",
   },
@@ -692,7 +711,6 @@ gsap.fromTo(".navmenu", {
     end: "3000 top",
     scrub: true,
   },
-  // height: "8.6vh",
   borderColor: "#242424",
   backgroundColor: "#9a9a9a00",
   ease: "none",
@@ -979,63 +997,76 @@ gsap.to(".text-visible-12", {
 /////////////////////// section-3 END
 //////////////////// section-4 START
 
-gsap.to(".img-box-left", {
-  scrollTrigger: {
-    trigger: ".section-four",
-    start: "top bottom",
-    end: "bottom center",
-    scrub: true,
-    markers: false,
-  },
-  marginLeft: "-8%",
-  ease: "none",
-});
-
 gsap.to(".section-four", {
   scrollTrigger: {
     trigger: ".section-four",
     start: "top 15%",
-    end: "bottom center",
+    end: "bottom top",
     pin: true,
+    pinSpacing: false,
     markers: false,
   },
   ease: "none",
+});
+
+gsap.to(".img-box-left", {
+  scrollTrigger: {
+    trigger: ".section-four",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: true,
+    markers: false,
+  },
+  marginLeft: "-8%",
+  ease: "power2.out",
 });
 
 gsap.to(".text-box-left", {
   scrollTrigger: {
     trigger: ".section-four",
     start: "top bottom",
-    end: "bottom center",
+    end: "bottom top",
     scrub: true,
     markers: false,
   },
   marginLeft: "5%",
-  ease: "none",
+  ease: "power2.out",
 });
 
 gsap.to(".text-box-right", {
   scrollTrigger: {
     trigger: ".section-four",
     start: "top bottom",
-    end: "bottom center",
+    end: "bottom top",
     scrub: true,
     markers: false,
   },
   marginLeft: "3%",
-  ease: "none",
+  ease: "power2.out",
 });
 
 gsap.to(".img-box-right", {
   scrollTrigger: {
     trigger: ".section-four",
     start: "top bottom",
-    end: "bottom center",
+    end: "bottom top",
     scrub: true,
     markers: false,
   },
   marginLeft: "5%",
-  ease: "none",
+  ease: "power2.out",
+});
+
+gsap.to(".on-img", {
+  scrollTrigger: {
+    trigger: ".section-four",
+    start: "top 70%",
+    markers: false,
+  },
+  delay: 1.2,
+  duration: 0.6,
+  ease: "bounce.in",
+  opacity: 1,
 });
 
 gsap.to(".section-four", {
@@ -1173,3 +1204,1106 @@ gsap.to("#offvisible2", {
   ease: "none",
   opacity: 1,
 });
+
+//////////////////// section-4 END
+//////////////////// section-5 START
+
+gsap.fromTo("#navj",
+  { color: "#2D3025" },
+  {
+    scrollTrigger: {
+      trigger: ".section-five",
+      start: "top 2%",
+      end: "50 top",
+      scrub: true,
+    },
+    color: "#bcbcbcff",
+    ease: "none"
+  }
+);
+
+gsap.fromTo("#navs",
+  { color: "#2D3025" },
+  {
+    scrollTrigger: {
+      trigger: ".section-five",
+      start: "top 2%",
+      end: "50 top",
+      scrub: true,
+    },
+    color: "#e1e1deff",
+    ease: "none"
+  }
+);
+
+gsap.fromTo(".navmenu", {
+    borderColor: "#242424",
+    backgroundColor: "#9a9a9a00",
+  },
+  {
+    scrollTrigger: {
+      trigger: ".section-five",
+      start: "top 2%",
+      end: "50 top",
+      scrub: true,
+    },
+    borderColor: "#D1FE07",
+    backgroundColor: "#F3F3EB",
+    ease: "none",
+  }
+);
+
+///////////////////// section-5 END
+//////////////////// section-6 START
+
+gsap.to(".section-six", {
+  scrollTrigger: {
+    trigger: ".section-six",
+    start: "top 70%",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section6-cover1").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".section-six", {
+  scrollTrigger: {
+    trigger: ".section-six",
+    start: "top 70%",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section6-cover2").classList.add("cover-animation-two");
+    }
+  },
+});
+
+gsap.to("#s6t1", {
+  scrollTrigger: {
+    trigger: ".section-six",
+    start: "top 70%",
+    markers: false,
+  },
+  delay: 0.7,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".section-six", {
+  scrollTrigger: {
+    trigger: ".section-six",
+    start: "top 70%",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section6-cover3").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".section-six", {
+  scrollTrigger: {
+    trigger: ".section-six",
+    start: "top 70%",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section6-cover4").classList.add("cover-animation-two");
+    }
+  },
+});
+
+gsap.to(".section-six", {
+  scrollTrigger: {
+    trigger: ".section-six",
+    start: "top 70%",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section6-cover5").classList.add("cover-animation-three");
+    }
+  },
+});
+
+gsap.to(".section-six", {
+  scrollTrigger: {
+    trigger: ".section-six",
+    start: "top 70%",
+    markers: false,
+    onEnter: () => {
+      document.querySelector(".section6-cover6").classList.add("cover-animation-two");
+    }
+  },
+});
+gsap.to("#s6t2", {
+  scrollTrigger: {
+    trigger: ".section-six",
+    start: "top 70%",
+    markers: false,
+  },
+  delay: 0.7,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".odd-column", {
+  scrollTrigger: {
+    trigger: ".section6-box2",
+    start: "top bottom",
+    end: "bottom center",
+    scrub: true,
+  },
+  marginTop: "0vh",
+  ease: "none",
+})
+
+//button animation
+const seetop = new SplitText(".seeTop", {
+  type: "chars"
+});
+
+const seebottom = new SplitText(".seeBottom", {
+  type: "chars"
+});
+
+gsap.set(seetop.chars, { display: "inline-block" });
+gsap.set(seebottom.chars, { display: "inline-block" });
+
+document.querySelector(".seeMore").addEventListener("mouseenter", () => {
+  gsap.to(seetop.chars, {
+    y: "-85%",
+    duration: 0.3,
+    ease: "power2.out",
+    stagger: 0.03,
+  });
+});
+
+document.querySelector(".seeMore").addEventListener("mouseenter", () => {
+  gsap.to(seebottom.chars, {
+    y: "-100%",
+    duration: 0.3,
+    ease: "power2.out",
+    stagger: 0.03,
+  });
+});
+
+document.querySelector(".seeMore").addEventListener("mouseleave", () => {
+  gsap.to(seetop.chars, {
+    y: 0,
+    duration: 0.3,
+    ease: "power2.in",
+    stagger: 0.03,
+  });
+});
+
+document.querySelector(".seeMore").addEventListener("mouseleave", () => {
+  gsap.to(seebottom.chars, {
+    y: 0,
+    duration: 0.3,
+    ease: "power2.in",
+    stagger: 0.03,
+  });
+});
+
+////button animation END
+
+gsap.to(".section6-box3", {
+  scrollTrigger: {
+    trigger: ".section6-box3",
+    start: "top 70%",
+    onEnter: () => {
+      document.querySelector("#section6-cover8").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".section6-box3", {
+  scrollTrigger: {
+    trigger: ".section6-box3",
+    start: "top 70%",
+    onEnter: () => {
+      document.querySelector("#section6-cover7").classList.add("cover-animation-two");
+    }
+  },
+});
+
+gsap.to("#s6b3", {
+  scrollTrigger: {
+    trigger: ".section6-box3",
+    start: "top 70%",
+  },
+  delay: 0.7,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".s6b3-helmet", {
+  scrollTrigger: {
+    trigger: ".section6-box3",
+    start: "top 90%",
+    end: "top 50%",
+    scrub: true,
+  },
+  // duration: 0.6,
+  ease: "none",
+  opacity: 1,
+});
+
+gsap.to(".section-six", {
+  scrollTrigger: {
+    trigger: ".section-six",
+    start: "bottom 90%",
+    end: "bottom 20%",
+    scrub: true,
+  },
+  ease: "none",
+  height: "340vh",
+});
+
+//////////////////// section-6 END
+//////////////////// section-7 START
+
+gsap.fromTo("#navj",
+  { color: "#bcbcbcff" },
+  {
+    scrollTrigger: {
+      trigger: ".section-seven",
+      start: "top 25%",
+      end: "50 20%",
+      scrub: true,
+    },
+    color: "#2D3025",
+    ease: "none"
+  }
+);
+
+gsap.fromTo("#navs",
+  { color: "#e1e1deff" },
+  {
+    scrollTrigger: {
+      trigger: ".section-seven",
+      start: "top 25%",
+      end: "50 20%",
+      scrub: true,
+    },
+    color: "#2D3025",
+    ease: "none"
+  }
+);
+
+gsap.fromTo(".navmenu", {
+    borderColor: "#D1FE07",
+    backgroundColor: "#F3F3EB",
+  },
+  {
+    scrollTrigger: {
+      trigger: ".section-seven",
+      start: "top 25%",
+      end: "50 20%",
+      scrub: true,
+    },
+    borderColor: "#242424",
+    backgroundColor: "#9a9a9a00",
+    ease: "none",
+  }
+);
+
+gsap.to(".mvImg", {
+  scrollTrigger: {
+    trigger: ".mvImg",
+    start: "top bottom",
+    end: "top top",
+    scrub: true,
+  },
+  ease: "none",
+  marginTop: "-95vh",
+});
+
+
+gsap.to(".section7-textbox", {
+  scrollTrigger: {
+    trigger: ".section7-textbox",
+    start: "top 70%",
+    onEnter: () => {
+      document.querySelector("#section7-cover1").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".section7-textbox", {
+  scrollTrigger: {
+    trigger: ".section7-textbox",
+    start: "top 70%",
+    onEnter: () => {
+      document.querySelector("#section7-cover2").classList.add("cover-animation-two");
+    }
+  },
+});
+
+gsap.to(".section7-textbox", {
+  scrollTrigger: {
+    trigger: ".section7-textbox",
+    start: "top 70%",
+    onEnter: () => {
+      document.querySelector("#section7-cover3").classList.add("cover-animation-three");
+    }
+  },
+});
+
+gsap.to("#s7t1", {
+  scrollTrigger: {
+    trigger: ".section7-textbox",
+    start: "top 70%",
+  },
+  delay: 0.7,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+
+
+gsap.to(".section7-textbox", {
+  scrollTrigger: {
+    trigger: ".section7-textbox",
+    start: "top center",
+    onEnter: () => {
+      document.querySelector("#section7-cover4").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to(".section7-textbox", {
+  scrollTrigger: {
+    trigger: ".section7-textbox",
+    start: "top center",
+    onEnter: () => {
+      document.querySelector("#section7-cover5").classList.add("cover-animation-two");
+    }
+  },
+});
+
+gsap.to(".section7-textbox", {
+  scrollTrigger: {
+    trigger: ".section7-textbox",
+    start: "top center",
+    onEnter: () => {
+      document.querySelector("#section7-cover6").classList.add("cover-animation-three");
+    }
+  },
+});
+
+gsap.to(".section7-textbox", {
+  scrollTrigger: {
+    trigger: ".section7-textbox",
+    start: "top center",
+    onEnter: () => {
+      document.querySelector("#section7-cover7").classList.add("cover-animation");
+    }
+  },
+});
+
+gsap.to("#s7t2", {
+  scrollTrigger: {
+    trigger: ".section7-textbox",
+    start: "top center",
+  },
+  delay: 0.7,
+  duration: 0,
+  ease: "none",
+  opacity: 1,
+});
+
+
+gsap.to(".smoothoperator", {
+  scrollTrigger: {
+    trigger: ".smoothoperator",
+    start: "top bottom",
+    end: "+=600vh top",
+    scrub: true,
+  },
+  ease: "none",
+  marginLeft: "-800vh",
+});
+
+
+// ////////////////
+
+const c1 = document.querySelector(".c1");
+const c2 = document.querySelector(".c2");
+const c3 = document.querySelector(".c3");
+const c4 = document.querySelector(".c4");
+const c5 = document.querySelector(".c5");
+const c6 = document.querySelector(".c6");
+const c7 = document.querySelector(".c7");
+
+c1.addEventListener("mouseenter", () => {
+  gsap.to(c1, {
+    marginTop: "20vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c2, {
+    marginLeft: "-4%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c3, {
+    marginLeft: "-6%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c4, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c5, {
+    marginLeft: "-10%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c6, {
+    marginLeft: "-10%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c7, {
+    marginLeft: "-10%",
+    marginTop: "23vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+
+});
+
+c1.addEventListener("mouseleave", () => {
+  gsap.to(c1, {
+    marginTop: "25vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c2, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c3, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c4, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c5, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });gsap.to(c6, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c7, {
+    marginLeft: "-8%",
+    marginTop: "25vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+});
+
+////card 1
+
+c2.addEventListener("mouseenter", () => {
+  gsap.to(c1, {
+    rotate: "-22deg",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c2, {
+    marginLeft: "-10%",
+    marginTop: "12vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c3, {
+    marginLeft: "0%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c4, {
+    marginLeft: "-6%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c5, {
+    marginLeft: "-11%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c6, {
+    marginLeft: "-11%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c7, {
+    marginLeft: "-10%",
+    marginTop: "23vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+
+});
+
+c2.addEventListener("mouseleave", () => {
+  gsap.to(c1, {
+    rotate: "-20deg",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c2, {
+    marginLeft: "-8%",
+    marginTop: "16vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c3, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c4, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c5, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });gsap.to(c6, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c7, {
+    marginLeft: "-8%",
+    marginTop: "25vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+});
+
+////card 2
+
+c3.addEventListener("mouseenter", () => {
+  gsap.to(c1, {
+    rotate: "-22deg",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c2, {
+    marginLeft: "-10%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c3, {
+    marginLeft: "-8%",
+    marginTop: "6vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c4, {
+    marginLeft: "0%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c5, {
+    marginLeft: "-11%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c6, {
+    marginLeft: "-12%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c7, {
+    marginLeft: "-8%",
+    marginTop: "23vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+
+});
+
+c3.addEventListener("mouseleave", () => {
+  gsap.to(c1, {
+    rotate: "-20deg",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c2, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c3, {
+    marginLeft: "-8%",
+    marginTop: "10vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c4, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c5, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });gsap.to(c6, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c7, {
+    marginLeft: "-8%",
+    marginTop: "25vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+});
+
+////card 3
+
+c4.addEventListener("mouseenter", () => {
+  gsap.to(c1, {
+    rotate: "-22deg",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c2, {
+    marginLeft: "-12%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c3, {
+    marginLeft: "-11%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c4, {
+    marginLeft: "-1%",
+    marginTop: "1vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c5, {
+    marginLeft: "-1%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c6, {
+    marginLeft: "-11%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c7, {
+    marginLeft: "-12%",
+    marginTop: "23vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+
+});
+
+c4.addEventListener("mouseleave", () => {
+  gsap.to(c1, {
+    rotate: "-20deg",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c2, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c3, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c4, {
+    marginLeft: "-8%",
+    marginTop: "6vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c5, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });gsap.to(c6, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c7, {
+    marginLeft: "-8%",
+    marginTop: "25vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+});
+
+////card 4
+
+c5.addEventListener("mouseenter", () => {
+  gsap.to(c1, {
+    rotate: "-22deg",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c2, {
+    marginLeft: "-10%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c3, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c4, {
+    marginLeft: "-12%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c5, {
+    marginLeft: "0%",
+    marginTop: "6vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c6, {
+    marginLeft: "-7%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c7, {
+    marginLeft: "-11%",
+    marginTop: "23vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+
+});
+
+c5.addEventListener("mouseleave", () => {
+  gsap.to(c1, {
+    rotate: "-20deg",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c2, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c3, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c4, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c5, {
+    marginLeft: "-8%",
+    marginTop: "10vh",
+    duration: 1,
+    ease: "elastic.out"
+  });gsap.to(c6, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c7, {
+    marginLeft: "-8%",
+    marginTop: "25vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+});
+
+////card 5
+
+c6.addEventListener("mouseenter", () => {
+  gsap.to(c1, {
+    rotate: "-22deg",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c2, {
+    marginLeft: "-10%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c3, {
+    marginLeft: "-10%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c4, {
+    marginLeft: "-10%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c5, {
+    marginLeft: "-7%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c6, {
+    marginLeft: "-0%",
+    marginTop: "12vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c7, {
+    marginLeft: "-11%",
+    marginTop: "23vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+
+});
+
+c6.addEventListener("mouseleave", () => {
+  gsap.to(c1, {
+    rotate: "-20deg",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c2, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c3, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c4, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c5, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c6, {
+    marginLeft: "-8%",
+    marginTop: "16vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c7, {
+    marginLeft: "-8%",
+    marginTop: "25vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+});
+
+////card 6
+
+c7.addEventListener("mouseenter", () => {
+  gsap.to(c1, {
+    rotate: "-22deg",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c2, {
+    marginLeft: "-10%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c3, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c4, {
+    marginLeft: "-10%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c5, {
+    marginLeft: "-10%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c6, {
+    marginLeft: "-6%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c7, {
+    marginLeft: "-3%",
+    marginTop: "20vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+
+});
+
+c7.addEventListener("mouseleave", () => {
+  gsap.to(c1, {
+    rotate: "-20deg",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c2, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c3, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c4, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c5, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c6, {
+    marginLeft: "-8%",
+    duration: 1,
+    ease: "elastic.out"
+  });
+  gsap.to(c7, {
+    marginLeft: "-8%",
+    marginTop: "25vh",
+    duration: 1,
+    ease: "elastic.out"
+  });
+});
+
+////card 7
+
+
+/////////////////////////Section-7 END
+/////////////////////////Section-8 START
+
+gsap.fromTo("#navj",
+  { color: "#2D3025" },
+  {
+    scrollTrigger: {
+      trigger: ".footer-svg",
+      start: "top 10%",
+      end: "top 5%",
+      scrub: true,
+    },
+    color: "#bcbcbcff",
+    ease: "none"
+  }
+);
+
+gsap.fromTo("#navs",
+  { color: "#2D3025" },
+  {
+    scrollTrigger: {
+      trigger: ".footer-svg",
+      start: "top 10%",
+      end: "top 5%",
+      scrub: true,
+    },
+    color: "#e1e1deff",
+    ease: "none"
+  }
+);
+
+gsap.fromTo(".navmenu", {
+    borderColor: "#242424",
+    backgroundColor: "#9a9a9a00",
+  },
+  {
+    scrollTrigger: {
+      trigger: ".footer-svg",
+      start: "top 10%",
+      end: "top 5%",
+      scrub: true,
+    },
+    borderColor: "#D1FE07",
+    backgroundColor: "#F3F3EB",
+    ease: "none",
+  }
+);
+
+//button animation
+const ftbtntop = new SplitText(".ftbtnTop", {
+  type: "chars"
+});
+
+const ftbtnbottom = new SplitText(".ftbtnBottom", {
+  type: "chars"
+});
+
+gsap.set(seetop.chars, { display: "inline-block" });
+gsap.set(seebottom.chars, { display: "inline-block" });
+
+document.querySelector(".footer-btn").addEventListener("mouseenter", () => {
+  gsap.to(ftbtntop.chars, {
+    y: "-85%",
+    duration: 0.3,
+    ease: "power2.out",
+    stagger: 0.03,
+  });
+});
+
+document.querySelector(".footer-btn").addEventListener("mouseenter", () => {
+  gsap.to(ftbtnbottom.chars, {
+    y: "-100%",
+    duration: 0.3,
+    ease: "power2.out",
+    stagger: 0.03,
+  });
+});
+
+document.querySelector(".footer-btn").addEventListener("mouseleave", () => {
+  gsap.to(ftbtntop.chars, {
+    y: 0,
+    duration: 0.3,
+    ease: "power2.in",
+    stagger: 0.03,
+  });
+});
+
+document.querySelector(".footer-btn").addEventListener("mouseleave", () => {
+  gsap.to(ftbtnbottom.chars, {
+    y: 0,
+    duration: 0.3,
+    ease: "power2.in",
+    stagger: 0.03,
+  });
+});
+
+////button animation END
