@@ -1,6 +1,12 @@
 gsap.registerPlugin(ScrollTrigger, PixiPlugin);
 PixiPlugin.registerPIXI(PIXI);
 
+
+console.log('%c     ██╗ █████╗ ██╗   ██╗ ██████╗ ██╗  ██╗██╗██████╗ \n     ██║██╔══██╗██║   ██║██╔═══██╗██║  ██║██║██╔══██╗\n     ██║███████║██║   ██║██║   ██║███████║██║██████╔╝\n██   ██║██╔══██║╚██╗ ██╔╝██║   ██║██╔══██║██║██╔══██╗\n╚█████╔╝██║  ██║ ╚████╔╝ ╚██████╔╝██║  ██║██║██║  ██║\n ╚════╝ ╚═╝  ╚═╝  ╚═══╝   ╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝', 'color: #d4ff00; font-weight: bold;');
+console.log('%c ██████╗ █████╗ ██╗      ██████╗ ██╗  ██╗██╗██████╗ \n██╔════╝██╔══██╗██║     ██╔═══██╗██║  ██║██║██╔══██╗\n███████╗███████║██║     ██║   ██║███████║██║██║  ██║\n╚════██║██╔══██║██║     ██║   ██║██╔══██║██║██║  ██║\n███████║██║  ██║███████╗╚██████╔╝██║  ██║██║██████╔╝ \n╚══════╝╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝╚═════╝ ', 'color: #e0e0e0; font-weight: bold;');
+console.log('%c██████╗ ██╗███╗   ██╗ ██████╗ ██╗   ██╗\n██╔══██╗██║████╗  ██║██╔═══██╗██║   ██║\n██║  ██║██║██╔██╗ ██║██║   ██║██║   ██║\n██║  ██║██║██║╚██╗██║██║   ██║╚██╗ ██╔╝\n██████╔╝██║██║ ╚████║╚██████╔╝ ╚████╔╝  \n╚═════╝ ╚═╝╚═╝  ╚═══╝ ╚═════╝   ╚═══╝ ', 'color: #e0e0e0; font-weight: bold;');
+
+
 document.body.style.overflow = "hidden";
 
 window.addEventListener("load", () => {
@@ -190,6 +196,7 @@ gsap.to(".navbutton", {
     scrub: true,
     markers: false,
   },
+  height: "8.2vh",
   fontSize: "2.5vh",
   ease: "none",
 });
@@ -207,7 +214,7 @@ gsap.to(".navmenu", {
     scrub: true,
     markers: false,
   },
-  height: "8.6vh",
+  height: "8.2vh",
   borderColor: "#D1FE07",
   backgroundColor: "#F3F3EB",
   ease: "none",
@@ -408,6 +415,65 @@ svgButton.addEventListener("click", () => {
 
   isMenu = !isMenu; // toggle
 });
+
+/////////////////////////
+
+isContact = false;
+contactButton = document.querySelector("#contact");
+
+contactButton.addEventListener("click", () => {
+  if (isContact) {    
+    gsap.to(".contact", {
+      marginLeft: "100%",
+      duration: 0.6,
+      ease: "power1.in",
+    });
+    gsap.to(".navj", {
+      color: "#2D3025",
+      ease: "power1.inOut",
+      duration: 0.6,
+    });
+    gsap.to(".navs", {
+      color: "#2D3025",
+      ease: "power1.inOut",
+      duration: 0.6,
+    });
+    gsap.to(".navmenu", {
+      borderColor: "#242424",
+      backgroundColor: "#9a9a9a00",
+      ease: "power1.inOut",
+      duration: 0.6,
+    });
+    document.body.style.overflow = "";
+  } else {
+    gsap.to(".contact", {
+      marginLeft: "0%",
+      duration: 0.6,
+      ease: "power1.in",
+    });
+    gsap.to(".navj", {
+      color: "#bcbcbcff",
+      ease: "power1.inOut",
+      duration: 0.6,
+    });
+    gsap.to(".navs", {
+      color: "#e1e1deff",
+      ease: "power1.inOut",
+      duration: 0.6,
+    });
+    gsap.to(".navmenu", {
+      borderColor: "#D1FE07",
+      backgroundColor: "#F3F3EB",
+      ease: "power1.inOut",
+      duration: 0.6,
+    });
+    document.body.style.overflow = "hidden";
+  }
+
+  isContact = !isContact; 
+});
+
+/////////
 
 gsap.to(".minihelmet", {
   scrollTrigger: {
@@ -631,6 +697,30 @@ window.addEventListener("mousemove", e => {
   });
 });
 
+const contactColumnOne = document.querySelector("#contact-column-one");
+const contactColumnTwo = document.querySelector("#contact-column-two");
+
+window.addEventListener("mousemove", e => {
+  const viewportMiddle = window.innerHeight / 2;
+  const offsetOne = (-e.clientY + viewportMiddle) * 0.2;
+  
+  gsap.to(contactColumnOne, {
+    duration: 1,
+    marginTop: offsetOne,
+    ease: "power2.out",
+  })
+});
+
+window.addEventListener("mousemove", e => {
+  const viewportMiddle = window.innerHeight / 2;
+  const offset = (e.clientY - viewportMiddle) * 0.2;
+  
+  gsap.to(contactColumnTwo, {
+    duration: 1,
+    marginTop: offset,
+    ease: "power2.out",
+  })
+});
 
 ////////////// section-3 start
 
