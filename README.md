@@ -1,4 +1,4 @@
-# �️ Lando Norris Tribute Website
+# �️ Javohir Salohiddinov Personal Website
 
 A modern, animated tribute website celebrating Lando Norris's historic first Formula 1 victory at the British Grand Prix. Built with vanilla JavaScript and GSAP for stunning scroll-based animations.
 
