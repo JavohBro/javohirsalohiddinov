@@ -426,7 +426,7 @@ contactButton.addEventListener("click", () => {
     gsap.to(".contact", {
       marginLeft: "100%",
       duration: 0.6,
-      ease: "power1.in",
+      ease: "power1.inOut",
     });
     gsap.to(".navj", {
       color: "#2D3025",
@@ -449,7 +449,7 @@ contactButton.addEventListener("click", () => {
     gsap.to(".contact", {
       marginLeft: "0%",
       duration: 0.6,
-      ease: "power1.in",
+      ease: "power1.inOut",
     });
     gsap.to(".navj", {
       color: "#bcbcbcff",
@@ -473,6 +473,34 @@ contactButton.addEventListener("click", () => {
   isContact = !isContact; 
 });
 
+const contacttg = document.querySelector('#contactTelegram')
+const contactig = document.querySelector('#contactInstagram')
+const contacttb = document.querySelector('#contactYoutube')
+const contactfirstimg  = document.querySelector('.contact-img-one')
+const contactthirdimg  = document.querySelector('.contact-img-three')
+const contactsecondimg  = document.querySelector('.contact-img-two')
+const contactfourthimg  = document.querySelector('.contact-img-four')
+
+// Telegram
+contacttg.addEventListener('mouseenter', () => contactfirstimg.classList.replace('img-filter-none', 'img-filter'))
+contacttg.addEventListener('mouseenter', () => contactthirdimg.classList.replace('img-filter', 'img-filter-none'))
+
+contacttg.addEventListener('mouseleave', () => contactfirstimg.classList.replace('img-filter', 'img-filter-none'))
+contacttg.addEventListener('mouseleave', () => contactthirdimg.classList.replace('img-filter-none', 'img-filter'))
+
+// Instagram
+contactig.addEventListener('mouseenter', () => contactfirstimg.classList.replace('img-filter-none', 'img-filter'))
+contactig.addEventListener('mouseenter', () => contactsecondimg.classList.replace('img-filter', 'img-filter-none'))
+
+contactig.addEventListener('mouseleave', () => contactfirstimg.classList.replace('img-filter', 'img-filter-none'))
+contactig.addEventListener('mouseleave', () => contactsecondimg.classList.replace('img-filter-none', 'img-filter'))
+
+// Youtube
+contacttb.addEventListener('mouseenter', () => contactfirstimg.classList.replace('img-filter-none', 'img-filter'))
+contacttb.addEventListener('mouseenter', () => contactfourthimg.classList.replace('img-filter', 'img-filter-none'))
+
+contacttb.addEventListener('mouseleave', () => contactfirstimg.classList.replace('img-filter', 'img-filter-none'))
+contacttb.addEventListener('mouseleave', () => contactfourthimg.classList.replace('img-filter-none', 'img-filter'))
 /////////
 
 gsap.to(".minihelmet", {
