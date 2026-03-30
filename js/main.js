@@ -20,18 +20,32 @@ window.addEventListener("load", () => {
   .from(".hero", { y: 80, opacity: 0, duration: 0.8 }, "-=0.3");
 });
 
+function clamp(min, preferred, max) {
+    return Math.min(Math.max(preferred, min), max);
+}
+
+// Calculate live values based on current screen
+const vw = window.innerWidth / 100;
+const vh = window.innerHeight / 100;
+
+window.addEventListener("resize", () => {
+    const vw = window.innerWidth / 100;
+    const vh = window.innerHeight / 100;
+
+    ScrollTrigger.refresh();
+});
+
 gsap.to(".a", {
     scrollTrigger: {
     trigger: ".a",
     start: "top top",
     scrub: true,
     pin: true,
-    markers: false,
   },
-  x: "65vh",
-  y: "220vh",
+  x:  clamp(490, 8 * vw, 600),
+  y: clamp(160, 40 * vh, 200),
+  // marginLeft: clamp(0, 20 * vw, 800),
   ease: "none",
-  // width: "80vh",
   width: "38%",
   height: "45vh",
 });
@@ -183,9 +197,8 @@ gsap.to(".buttons", {
     trigger: ".nav",
     start: "top 2%",
     scrub: true,
-    markers: false,
   },
-  width: "13%",
+  width: clamp(120, 15 * vw, 200),
   ease: "none",
 });
 
@@ -194,29 +207,21 @@ gsap.to(".navbutton", {
     trigger: ".nav",
     start: "top 2%",
     scrub: true,
-    markers: false,
   },
-  height: "8.2vh",
-  fontSize: "2.5vh",
+  height: clamp(36, 8 * vh, 70), /* was raw 8.2vh */
+  fontSize: clamp(9, 1.2 * vw, 20), /* was 2.5vh */
   ease: "none",
 });
 
 gsap.to(".navmenu", {
-  height: "9.6vh",
-  borderColor: "#242424",
-  backgroundColor: "#9a9a9a00",
-});
-
-gsap.to(".navmenu", {
+  height: clamp(36, 8 * vh, 70), /* was raw 8.2vh */
+  borderColor: "#D1FE07",
+  backgroundColor: "#F3F3EB",
   scrollTrigger: {
     trigger: ".nav",
     start: "top 2%",
     scrub: true,
-    markers: false,
   },
-  height: "8.2vh",
-  borderColor: "#D1FE07",
-  backgroundColor: "#F3F3EB",
   ease: "none",
 });
 
@@ -1562,7 +1567,6 @@ gsap.to(".s6b3-helmet", {
     end: "top 50%",
     scrub: true,
   },
-  // duration: 0.6,
   ease: "none",
   opacity: 1,
 });

@@ -69,8 +69,8 @@ img::selection {
 
 .contact-part1 {
     width: 50%;
-    height: 100vh;
     float: left;
+    align-items: center;
 }
 
 .contact-part2 {
@@ -81,9 +81,9 @@ img::selection {
 
 .contact-column {
     width: 45%;
-    height: 100vh;
     margin-left: 5%;
     float: left;
+    align-items: center;
 }
 
 .img-filter-none {
@@ -97,7 +97,6 @@ img::selection {
 }
 .contact-row {
     width: 100%;
-    height: 50vh;
 }
 
 .contact-row-bottom {
@@ -241,68 +240,78 @@ img::selection {
     margin-top: -2vh;
     font-size: 5.5vh;
 }
-.buttons{
+.buttons {
     float: right;
-    width: 35vh;
+    width: clamp(130px, 16vw, 220px);
 }
-.navbutton{
+
+.navbutton {
     float: left;
     width: 65%;
-    margin-top: 1.4vh;
+    margin-top: clamp(6px, 1.4vh, 14px);
     font-family: "Mona Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 800;
     font-style: normal;
     font-variation-settings: "wdth" 90;
-    font-size: 3vh;
+    font-size: clamp(10px, 2.8vw, 20px);
     color: #1b1b1b;
     line-height: 110%;
     background-color: #D2FF00;
     border: 0.2vh solid #D2FF00;
-    border-radius: 1.4vh;
+    border-radius: clamp(6px, 1.2vw, 12px);
     cursor: pointer;
     overflow: hidden;
 }
 
-.store{
+.store {
     width: 12%;
     float: left;
 }
-.e{
+
+.e {
     float: left;
     width: 70%;
-    height: 2.5vh;
+    height: clamp(10px, 2.5vh, 28px);
+    /* guarded vh */
     background: #D2FF00;
     margin-left: 10%;
     position: relative;
     z-index: 1;
 }
-.storeText{
+
+.storeText {
     float: left;
     width: 70%;
     margin-left: 10%;
+    white-space: nowrap;
 }
+
 .f {
     float: left;
     width: 70%;
-    height: 3.2vh;
+    height: clamp(12px, 3.2vh, 36px);
+    /* guarded vh */
     background: #D2FF00;
     margin-left: 10%;
     margin-top: -16%;
     position: relative;
     z-index: 1;
 }
-.navmenu{
+
+.navmenu {
     float: left;
     width: 27%;
-    height: 9.6vh;
+    height: clamp(40px, 8.8vh, 80px);
+    /* was raw 9.6vh */
     margin-left: 5%;
-    margin-top: 1.4vh;
-    border: 0.4vh solid rgb(36, 36, 36);
-    border-radius: 17%;
+    margin-top: clamp(6px, 1.4vh, 14px);
+    border: clamp(1px, 0.4vh, 3px) solid rgb(36, 36, 36);
+    border-radius: clamp(6px, 1.2vw, 12px);
     cursor: pointer;
     background-color: #9a9a9a00;
 }
+
 .menuPath {
     width: 100%;
     margin-top: 10%;
@@ -370,7 +379,7 @@ img::selection {
     font-weight: 700;
     font-style: normal;
     font-variation-settings: "wdth" 90;
-    font-size: 70%;
+    font-size: clamp(0.6rem, 0.8vw, 1rem);
     text-align: center;
     color: #bcbcbcff;
     margin-top: 1vh;
@@ -516,7 +525,7 @@ img::selection {
     font-weight: 700;
     font-style: normal;
     font-variation-settings: "wdth" 90;
-    font-size: 16vh;
+    font-size: clamp(5.2rem, 7.5vw, 8.5rem);
     text-align: center;
     color: #e1e1deff;
     margin-top: 8vh;
@@ -963,7 +972,7 @@ img::selection {
     font-style: normal;
     font-variation-settings: "wdth" 95;
     font-weight: 700;
-    font-size: 9vh;
+    font-size: clamp(3.5rem, 5vw, 4rem);
     line-height: 0.9;
     color: #F4F4ED;
 }
@@ -1085,6 +1094,10 @@ img::selection {
     margin-left: 20%;
     margin-top: -42vh;
     position: relative;
+    /* border: 1px solid white; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 1;
     transition: 0.4s ease-in-out;
 }
@@ -1115,9 +1128,8 @@ img::selection {
 /* ///////////////// */
 
 .section6-box3 {
-    width: 30%;
-    height: 35vh;
-    margin-left: 35%;
+    width: clamp(300px, 30vw, 600px);
+    margin-left: clamp(400px, 35vw, 600px);
 }
 
 .section6-box3 img {
@@ -1129,7 +1141,7 @@ img::selection {
 .section6-box3 h1 {
     font-family: 'Brier-Regular', serif;
     font-variation-settings: "wdth" 95;
-    font-size: 4vh;
+    font-size: clamp(1.5rem, 1.6vw, 10rem);
     color: #F4F4ED;
     text-align: center;
     margin-top: 2vh;
@@ -1137,15 +1149,15 @@ img::selection {
 }
 
 .seeMore {
-    width: 40%;
+    width: clamp(180px, 40%, 240px);
     margin-top: 4vh;
-    margin-left: 30%;
+    margin-left: clamp(60px, 30%, 200px);
     font-family: "Mona Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 800;
     font-style: normal;
     font-variation-settings: "wdth" 90;
-    font-size: 2.5vh;
+    font-size: clamp(1rem, 1.2vw, 3rem);
     color: #2a2a2a;
     line-height: 110%;
     padding-left: 1.5vh;
@@ -1153,6 +1165,7 @@ img::selection {
     border: 0.2vh solid #D2FF00;
     border-radius: 1.4vh;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .eSeeMore {
@@ -1198,12 +1211,12 @@ img::selection {
 .section6-cover7 {
     background: #D1FE07;
     width: 0%;
-    height: 5vh;
+    height: clamp(10px, 2vw, 50px);
     position: relative;
     z-index: 1;
 }
 .section6-cover8 {
-    margin-top: -10vh;
+    margin-top: clamp(-60px, -4vw, -20px);
 }
 
 /* \\\\\\\\\\\ SECTION-6 END ///////// */
@@ -1218,15 +1231,13 @@ img::selection {
 .section7-textbox {
     width: 35%;
     margin-left: 5%;
-    margin-top: 30vh;
-    /* position: relative; */
-    /* float: left; */
+    margin-top: 30vh;   
 }
 
 .section7-textbox h1 {
     font-family: "Mona Sans", sans-serif;
     font-weight: 750;
-    font-size: 14vh;
+    font-size: clamp(5rem, 6.5vw, 7rem);
     line-height: 0.8;
     font-variation-settings: "wdth" 90;
     color: #282C20;
@@ -1241,10 +1252,11 @@ img::selection {
     margin-top: 5vh;
     font-family: "Mona Sans", sans-serif;
     font-weight: 600;
-    font-size: 3vh;
+    font-size: clamp(1rem, 1.5vw, 5rem);
     line-height: 1.2;
     font-variation-settings: "wdth" 90;
     color: #282C20;
+    white-space: nowrap;
     opacity: 0;
 }
 
@@ -1444,8 +1456,8 @@ img::selection {
 
 .shadow-effect {
     width: 100%;
-    height: 50vh;
-    margin-top: -40vh;
+    height: clamp(100px, 10vh, 300px);
+    /* margin-top: -40vh; */
     background-color: #F4F4ED;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
@@ -1454,7 +1466,6 @@ img::selection {
 
 .footer-box {
     width: 98%;
-    height: 105vh;
     margin-left: 1%;
     margin-top: 20vh;
 }
@@ -1468,7 +1479,7 @@ img::selection {
 .signiture {
     width: 20%;
     margin-left: 40%;
-    margin-top: -95vh;
+    margin-top: clamp(-900px, -80vh, -800px);
     /* border: 1px solid black; */
     position: relative;
     z-index: 2;
@@ -1485,7 +1496,7 @@ img::selection {
 }
 
 .footer-slogan h1 {
-    font-size: 11vh;
+    font-size: clamp(2rem, 5vw, 6rem);
     font-weight: 700;
     letter-spacing: -1px;
 }
@@ -1503,7 +1514,7 @@ img::selection {
 }
 .footer-text-side {
     float: left;
-    margin-top: 20vh;
+    margin-top: clamp(40px, 15vh, 140px);
     width: 15%;
     text-align: center;
     position: relative;
@@ -1540,15 +1551,15 @@ img::selection {
 }
 
 .footer-btn {
-    width: 9%;
-    margin-top: 65vh;
+    width: clamp(100px, 9vw, 300px);
+    margin-top: clamp(400px, 65vh, 500px);
     margin-left: -45%;
     font-family: "Mona Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 800;
     font-style: normal;
     font-variation-settings: "wdth" 90;
-    font-size: 2.5vh;
+    font-size: clamp(1rem, 1.4vw, 2rem);
     color: #2a2a2a;
     line-height: 110%;
     padding-left: 1.5vh;
