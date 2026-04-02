@@ -1651,8 +1651,10 @@ img::selection {
 /*/////  */
 
 .phone {
+    background-color: #092603;
     display: none;
     place-items: center;
+    margin-top: 0%;
 }
 
 .phone-logo{
@@ -1723,7 +1725,7 @@ img::selection {
     height: 25vh;
     margin-top: clamp(-40px, -3vh, -10px);
     position: relative;
-    z-index: -1;
+    z-index: 0;
     overflow: hidden;
     white-space: nowrap;
 }
@@ -1756,9 +1758,6 @@ img::selection {
     text-decoration: none;
     color: #F4F4ED;
     font-size: clamp(0.8rem, 14vw, 4rem);
-}
-
-.phone-button-box{
 }
 
 .phone-button {
