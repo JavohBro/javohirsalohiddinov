@@ -1735,15 +1735,12 @@ img::selection {
     margin-top: clamp(40px, 10vh, 150px);
 }
 
-.phone-helmet-text{
+.phone-helmet-text {
     text-align: center;
     font-family: "Mona Sans", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 600;
     font-style: normal;
-    font-variation-settings: "wdth" 96;
-    font-size: clamp(1rem, 1.2vw, 5rem);
-    line-height: 1;
+    font-variation-settings: "wdth" 100;
     color: #F4F4ED;
 }
 
@@ -1753,11 +1750,31 @@ img::selection {
     color: #F4F4ED;
 }
 
-.phone-helmet-text a {
+.phone-links {
+    text-align: center;
+    font-family: "Mona Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    word-spacing: 5vw;
+    font-variation-settings: "wdth" 100;
+    color: #F4F4ED;
+}
+
+.phone-first-link {
     margin-top: clamp(20px, 100vh, 300px);
     text-decoration: none;
+    font-weight: 600;
+    font-variation-settings: "wdth" 110;
     color: #F4F4ED;
-    font-size: clamp(0.8rem, 14vw, 4rem);
+    font-size: clamp(0.8rem, 16vw, 4rem);
+}
+
+.phone-other-links {
+    text-decoration: none;
+    font-weight: 200;
+    line-height: 1.8;
+    color: #F4F4ED;
+    font-size: clamp(0.8rem, 8vw, 4rem);
 }
 
 .phone-button {
@@ -1792,7 +1809,8 @@ img::selection {
     margin-top: clamp(20px, 5vh, 100px);
     margin-left: clamp(20px, 5vw, 50px);
     font-family: "Mona Sans", sans-serif;
-    font-size: clamp(0.8rem, 5vw, 4rem);
+    font-weight: 200;
+    font-size: clamp(0.8rem, 4vw, 4rem);
     color: #ffffff7a; 
     line-height: 110%;
     text-align: center;}
